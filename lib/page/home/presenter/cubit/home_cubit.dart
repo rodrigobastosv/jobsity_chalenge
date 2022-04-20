@@ -21,9 +21,7 @@ class HomeCubit extends Cubit<HomeState> {
     );
   }
 
-  Future<void> fetchShows({
-    required int page,
-  }) async {
+  Future<void> fetchShowsByPage(int page) async {
     emit(
       state.copyWith(
         status: HomeStatus.loading,

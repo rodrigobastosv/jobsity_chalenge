@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import 'page/page.dart';
+import 'core/core.dart';
 
 class App extends StatelessWidget {
   const App({Key? key}) : super(key: key);
@@ -13,7 +12,8 @@ class App extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const HomePage(),
+      initialRoute: homePage,
+      onGenerateRoute: AppRouter.generateRoutes,
     );
   }
 }

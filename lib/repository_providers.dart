@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:jobsity_chalenge/page/home/data/repository/http_home_repository.dart';
 
 import 'page/home/data/repository/home_repository.dart';
+import 'page/show_details/data/data.dart';
 
 class RepositoryProviders extends StatelessWidget {
   const RepositoryProviders({
@@ -21,6 +22,9 @@ class RepositoryProviders extends StatelessWidget {
       providers: [
         RepositoryProvider<HomeRepository>(
           create: (_) => HttpHomeRepository(client),
+        ),
+        RepositoryProvider<ShowDetailsRepository>(
+          create: (_) => HttpShowDetailsRepository(client),
         ),
       ],
       child: child,

@@ -61,8 +61,6 @@ class HttpHomeRepository implements HomeRepository {
       if (e is FetchShowException) {
         rethrow;
       } else {
-        print(e);
-        print(e.toString());
         throw UnknownException();
       }
     }
