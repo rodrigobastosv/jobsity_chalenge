@@ -14,6 +14,7 @@ dependencies:
   
   cupertino_icons: ^1.0.2
   dio: ^4.0.6
+  expandable_fab_menu: ^0.0.1
   flutter_bloc: ^8.0.1
   equatable: ^2.0.3
 
