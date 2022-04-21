@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:jobsity_chalenge/page/people_search/people_search.dart';
 
+import '../../../core/core.dart';
 import 'cubit/people_search_state.dart';
 
 class PeopleSearchPage extends StatelessWidget {
@@ -20,17 +21,18 @@ class PeopleSearchPage extends StatelessWidget {
           title: Padding(
             padding: const EdgeInsets.all(8.0),
             child: TextFormField(
-              //initialValue: state.query,
+              initialValue: state.query,
               decoration: const InputDecoration(
                 border: OutlineInputBorder(),
                 hintText: 'Search people...',
               ),
-              //onChanged: context.read<HomeCubit>().onChangeQuery,
+              onChanged: context.read<PeopleSearchCubit>().onChangeQuery,
             ),
           ),
           actions: [
             GestureDetector(
-              onTap: () {},
+              onTap: () =>
+                  context.read<PeopleSearchCubit>().fetchPeopleByQuery(),
               child: const Icon(
                 Icons.search,
                 color: Colors.black,
@@ -45,9 +47,16 @@ class PeopleSearchPage extends StatelessWidget {
               )
             : ListView.builder(
                 itemBuilder: (_, i) => ListTile(
-                  leading: CircleAvatar(
-                    backgroundImage: NetworkImage(state.people[i].mediumImage!),
+                  onTap: () => Navigator.of(context).pushNamed(
+                    personDetailsPage,
+                    arguments: state.people[i],
                   ),
+                  leading: state.people[i].mediumImage != null
+                      ? CircleAvatar(
+                          backgroundImage:
+                              NetworkImage(state.people[i].mediumImage!),
+                        )
+                      : const Icon(Icons.person),
                   title: Text(state.people[i].name!),
                 ),
                 itemCount: state.people.length,

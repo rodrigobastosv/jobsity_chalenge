@@ -32,4 +32,32 @@ class HttpPeopleSearchRepository implements PeopleSearchRepository {
       }
     }
   }
+
+  @override
+  Future<List<PersonModel>> fetchPeopleByQuery(String query) async {
+    try {
+      final clientResponse = await _client.get(
+        '/search/people',
+        queryParameters: {
+          'q': query,
+        }
+      );
+
+      if (clientResponse.statusCode == httpOk) {
+        final listResponse = clientResponse.data as List;
+        return List.generate(
+          listResponse.length,
+          (i) => PersonModel.fromJson(listResponse[i]['person']),
+        );
+      } else {
+        throw FetchPeopleSearchException('Error Fetching people by query');
+      }
+    } on Exception catch (e) {
+      if (e is FetchPeopleSearchException) {
+        rethrow;
+      } else {
+        throw UnknownException();
+      }
+    }
+  }
 }

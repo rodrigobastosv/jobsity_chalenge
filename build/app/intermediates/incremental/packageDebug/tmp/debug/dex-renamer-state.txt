@@ -1,4 +1,4 @@
-#Thu Apr 21 07:36:12 BRT 2022
+#Thu Apr 21 18:43:50 BRT 2022
 base.0=/Users/RB159810/Documents/Development/Repositories/Personal/General/jobsity_chalenge/build/app/intermediates/dex/debug/mergeDexDebug/classes.dex
 renamed.0=classes.dex
 path.0=classes.dex

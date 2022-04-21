@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:jobsity_chalenge/core/core.dart';
 import 'package:jobsity_chalenge/page/home/data/repository/http_home_repository.dart';
 import 'package:jobsity_chalenge/page/people_search/data/data.dart';
+import 'package:jobsity_chalenge/page/person_details/person_details.dart';
 
 import 'page/favorite_shows/data/repository/repository.dart';
 import 'page/home/data/repository/home_repository.dart';
@@ -31,6 +32,9 @@ class RepositoryProviders extends StatelessWidget {
         ),
         RepositoryProvider<PeopleSearchRepository>(
           create: (_) => HttpPeopleSearchRepository(client),
+        ),
+        RepositoryProvider<PersonDetailsRepository>(
+          create: (_) => HttpPersonDetailsRepository(client),
         ),
         RepositoryProvider<ShowFavoriteInfoRepository>(
           create: (_) => HiveShowFavoriteInfoRepository(

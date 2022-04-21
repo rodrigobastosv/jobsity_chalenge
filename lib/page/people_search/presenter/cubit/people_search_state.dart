@@ -11,28 +11,33 @@ enum PeopleSearchStatus {
 class PeopleSearchState extends Equatable {
   final List<PersonModel> people;
   final PeopleSearchStatus status;
+  final String query;
   final String errorMessage;
 
   const PeopleSearchState({
     required this.people,
     required this.status,
+    required this.query,
     required this.errorMessage,
   });
 
   factory PeopleSearchState.initial() => const PeopleSearchState(
         people: [],
         status: PeopleSearchStatus.initial,
+        query: '',
         errorMessage: '',
       );
 
   PeopleSearchState copyWith({
     List<PersonModel>? people,
     PeopleSearchStatus? status,
+    String? query,
     String? errorMessage,
   }) {
     return PeopleSearchState(
       people: people ?? this.people,
       status: status ?? this.status,
+      query: query ?? this.query,
       errorMessage: errorMessage ?? this.errorMessage,
     );
   }
@@ -41,6 +46,7 @@ class PeopleSearchState extends Equatable {
   List<Object?> get props => [
         people,
         status,
+        query,
         errorMessage,
       ];
 }
