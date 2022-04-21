@@ -18,6 +18,13 @@ class ShowDetailsPage extends StatelessWidget {
           child: Column(
             children: [
               Image.network(state.show.originalImage!),
+              ElevatedButton(
+                onPressed: () =>
+                    context.read<ShowDetailsCubit>().toggleFavoriteShow(),
+                child: Text(
+                  state.isShowFavorited! ? 'Unfavorite' : 'Favorite',
+                ),
+              ),
               if (state.status == ShowDetailsStatus.success)
                 ListView.builder(
                   shrinkWrap: true,

@@ -5,6 +5,7 @@ import 'package:jobsity_chalenge/core/data/model/show_episode_model.dart';
 import 'package:jobsity_chalenge/core/data/model/show_model.dart';
 import 'package:jobsity_chalenge/core/routing/routes.dart';
 import 'package:jobsity_chalenge/page/episode_details/episode_details.dart';
+import 'package:jobsity_chalenge/page/favorite_shows/favorite_shows.dart';
 import 'package:jobsity_chalenge/page/home/home.dart';
 import 'package:jobsity_chalenge/page/show_details/show_details.dart';
 
@@ -27,13 +28,24 @@ class AppRouter {
       routeWidget = BlocProvider<ShowDetailsCubit>(
         create: (context) => ShowDetailsCubit(
           show: args! as ShowModel,
-          repository: context.read<ShowDetailsRepository>(),
-        )..fetchShowEpisodes(),
+          showDetailsRepository: context.read<ShowDetailsRepository>(),
+          showFavoriteInfoRepository:
+              context.read<ShowFavoriteInfoRepository>(),
+        )
+          ..loadFavoritedInfo()
+          ..fetchShowEpisodes(),
         child: const ShowDetailsPage(),
       );
     } else if (routeName == episodeDetailsPage) {
       final episode = args! as ShowEpisodeModel;
       routeWidget = EpisodeDetailsPage(episode);
+    } else if (routeName == favoritesShowsPage) {
+      routeWidget = BlocProvider<FavoriteShowsCubit>(
+        create: (context) => FavoriteShowsCubit(
+          repository: context.read<FavoriteShowsRepository>(),
+        )..fetchFavoriteShows(),
+        child: const FavoriteShowsPage(),
+      );
     } else {
       routeWidget = const Scaffold();
     }

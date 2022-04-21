@@ -12,6 +12,7 @@ enum ShowDetailsStatus {
 
 class ShowDetailsState extends Equatable {
   final ShowModel show;
+  final bool? isShowFavorited;
   final List<ShowEpisodeModel> episodes;
   final ShowDetailsStatus status;
   final String query;
@@ -19,6 +20,7 @@ class ShowDetailsState extends Equatable {
 
   const ShowDetailsState({
     required this.show,
+    required this.isShowFavorited,
     required this.episodes,
     required this.status,
     required this.query,
@@ -27,6 +29,7 @@ class ShowDetailsState extends Equatable {
 
   factory ShowDetailsState.initial(ShowModel show) => ShowDetailsState(
     show: show,
+    isShowFavorited: null,
     episodes: const [],
     status: ShowDetailsStatus.initial,
     query: '',
@@ -35,6 +38,7 @@ class ShowDetailsState extends Equatable {
 
   ShowDetailsState copyWith({
     ShowModel? show,
+    bool? isShowFavorited,
     List<ShowEpisodeModel>? episodes,
     ShowDetailsStatus? status,
     String? query,
@@ -42,6 +46,7 @@ class ShowDetailsState extends Equatable {
   }) {
     return ShowDetailsState(
       show: show ?? this.show,
+      isShowFavorited: isShowFavorited ?? this.isShowFavorited,
       episodes: episodes ?? this.episodes,
       status: status ?? this.status,
       query: query ?? this.query,
@@ -52,6 +57,7 @@ class ShowDetailsState extends Equatable {
   @override
   List<Object?> get props => [
         show,
+        isShowFavorited,
         episodes,
         status,
         query,

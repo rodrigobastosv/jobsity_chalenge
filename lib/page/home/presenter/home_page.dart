@@ -100,7 +100,7 @@ class HomePage extends StatelessWidget {
                 subtitle: 'Manage your favorite shows',
                 subTitleColor: Colors.white,
                 backgroundColor: Colors.amber,
-                onTap: () => debugPrint('FIRST CHILD'),
+                onTap: () => Navigator.of(context).pushNamed(favoritesShowsPage),
               ),
               ExpandableFabMenuItem(
                 child: const Icon(Icons.visibility, color: Colors.white),

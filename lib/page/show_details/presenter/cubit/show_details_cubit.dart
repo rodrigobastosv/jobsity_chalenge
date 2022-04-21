@@ -8,11 +8,39 @@ import 'show_details_state.dart';
 class ShowDetailsCubit extends Cubit<ShowDetailsState> {
   ShowDetailsCubit({
     required ShowModel show,
-    required ShowDetailsRepository repository,
-  })  : _repository = repository,
+    required ShowDetailsRepository showDetailsRepository,
+    required ShowFavoriteInfoRepository showFavoriteInfoRepository,
+  })  : _showDetailsRepository = showDetailsRepository,
+        _showFavoriteInfoRepository = showFavoriteInfoRepository,
         super(ShowDetailsState.initial(show));
 
-  final ShowDetailsRepository _repository;
+  final ShowDetailsRepository _showDetailsRepository;
+  final ShowFavoriteInfoRepository _showFavoriteInfoRepository;
+
+  void loadFavoritedInfo() {
+    final isShowFavorited =
+        _showFavoriteInfoRepository.isShowFavorited(state.show.id);
+
+    emit(
+      state.copyWith(
+        isShowFavorited: isShowFavorited,
+      ),
+    );
+  }
+
+  void toggleFavoriteShow() {
+    if (state.isShowFavorited!) {
+      _showFavoriteInfoRepository.unfavoriteShow(state.show);
+    } else {
+      _showFavoriteInfoRepository.favoriteShow(state.show);
+    }
+    
+    emit(
+      state.copyWith(
+        isShowFavorited: !state.isShowFavorited!,
+      ),
+    );
+  }
 
   Future<void> fetchShowEpisodes() async {
     emit(
@@ -23,7 +51,7 @@ class ShowDetailsCubit extends Cubit<ShowDetailsState> {
 
     try {
       final show = state.show;
-      final episodes = await _repository.fetchEpisodes(show.id);
+      final episodes = await _showDetailsRepository.fetchEpisodes(show.id);
       emit(
         state.copyWith(
           status: ShowDetailsStatus.success,
