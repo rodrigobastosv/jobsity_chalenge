@@ -2,6 +2,10 @@ jobsity_chalenge
 2.16
 file:///Users/RB159810/Documents/Development/Repositories/Personal/General/jobsity_chalenge/
 file:///Users/RB159810/Documents/Development/Repositories/Personal/General/jobsity_chalenge/lib/
+another_flushbar
+2.12
+file:///Users/RB159810/Documents/Development/flutter/.pub-cache/hosted/pub.dartlang.org/another_flushbar-1.10.28/
+file:///Users/RB159810/Documents/Development/flutter/.pub-cache/hosted/pub.dartlang.org/another_flushbar-1.10.28/lib/
 async
 2.12
 file:///Users/RB159810/Documents/Development/flutter/.pub-cache/hosted/pub.dartlang.org/async-2.8.2/
@@ -78,6 +82,10 @@ http_parser
 2.12
 file:///Users/RB159810/Documents/Development/flutter/.pub-cache/hosted/pub.dartlang.org/http_parser-4.0.0/
 file:///Users/RB159810/Documents/Development/flutter/.pub-cache/hosted/pub.dartlang.org/http_parser-4.0.0/lib/
+js
+2.12
+file:///Users/RB159810/Documents/Development/flutter/.pub-cache/hosted/pub.dartlang.org/js-0.6.3/
+file:///Users/RB159810/Documents/Development/flutter/.pub-cache/hosted/pub.dartlang.org/js-0.6.3/lib/
 lints
 2.12
 file:///Users/RB159810/Documents/Development/flutter/.pub-cache/hosted/pub.dartlang.org/lints-1.0.1/
@@ -130,6 +138,10 @@ path_provider_windows
 2.12
 file:///Users/RB159810/Documents/Development/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider_windows-2.0.5/
 file:///Users/RB159810/Documents/Development/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider_windows-2.0.5/lib/
+pinput
+2.12
+file:///Users/RB159810/Documents/Development/flutter/.pub-cache/hosted/pub.dartlang.org/pinput-2.2.7/
+file:///Users/RB159810/Documents/Development/flutter/.pub-cache/hosted/pub.dartlang.org/pinput-2.2.7/lib/
 platform
 2.12
 file:///Users/RB159810/Documents/Development/flutter/.pub-cache/hosted/pub.dartlang.org/platform-3.1.0/
@@ -146,6 +158,10 @@ provider
 2.12
 file:///Users/RB159810/Documents/Development/flutter/.pub-cache/hosted/pub.dartlang.org/provider-6.0.2/
 file:///Users/RB159810/Documents/Development/flutter/.pub-cache/hosted/pub.dartlang.org/provider-6.0.2/lib/
+smart_auth
+2.16
+file:///Users/RB159810/Documents/Development/flutter/.pub-cache/hosted/pub.dartlang.org/smart_auth-1.0.5/
+file:///Users/RB159810/Documents/Development/flutter/.pub-cache/hosted/pub.dartlang.org/smart_auth-1.0.5/lib/
 source_span
 2.12
 file:///Users/RB159810/Documents/Development/flutter/.pub-cache/hosted/pub.dartlang.org/source_span-1.8.1/
@@ -198,4 +214,8 @@ flutter_test
 2.12
 file:///Users/RB159810/Documents/Development/flutter/packages/flutter_test/
 file:///Users/RB159810/Documents/Development/flutter/packages/flutter_test/lib/
+flutter_web_plugins
+2.12
+file:///Users/RB159810/Documents/Development/flutter/packages/flutter_web_plugins/
+file:///Users/RB159810/Documents/Development/flutter/packages/flutter_web_plugins/lib/
 2

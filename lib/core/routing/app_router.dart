@@ -10,8 +10,10 @@ import 'package:jobsity_chalenge/page/home/home.dart';
 import 'package:jobsity_chalenge/page/people_search/people_search.dart';
 import 'package:jobsity_chalenge/page/person_details/person_details.dart';
 import 'package:jobsity_chalenge/page/show_details/show_details.dart';
+import 'package:jobsity_chalenge/page/sign_in/sign_in.dart';
 
 import '../../page/home/data/repository/home_repository.dart';
+import '../../page/sign_up/sign_up.dart';
 
 class AppRouter {
   static Route<dynamic> generateRoutes(RouteSettings settings) {
@@ -19,7 +21,21 @@ class AppRouter {
     final routeName = settings.name;
 
     late Widget routeWidget;
-    if (routeName == homePage) {
+    if (routeName == signInPage) {
+      routeWidget = BlocProvider<SignInCubit>(
+        create: (context) => SignInCubit(
+          repository: context.read<SignInRepository>(),
+        ),
+        child: const SignInPage(),
+      );
+    } else if (routeName == signUpPage) {
+      routeWidget = BlocProvider<SignUpCubit>(
+        create: (context) => SignUpCubit(
+          repository: context.read<SignUpRepository>(),
+        ),
+        child: const SignUpPage(),
+      );
+    } else if (routeName == homePage) {
       routeWidget = BlocProvider<HomeCubit>(
         create: (context) => HomeCubit(
           repository: context.read<HomeRepository>(),

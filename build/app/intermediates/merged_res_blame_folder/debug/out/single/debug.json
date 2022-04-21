@@ -16,12 +16,12 @@
         "source": "/Users/RB159810/Documents/Development/Repositories/Personal/General/jobsity_chalenge/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png"
     },
     {
-        "merged": "/Users/RB159810/Documents/Development/Repositories/Personal/General/jobsity_chalenge/build/app/intermediates/res/merged/debug/mipmap-mdpi_ic_launcher.png.flat",
-        "source": "/Users/RB159810/Documents/Development/Repositories/Personal/General/jobsity_chalenge/android/app/src/main/res/mipmap-mdpi/ic_launcher.png"
-    },
-    {
         "merged": "/Users/RB159810/Documents/Development/Repositories/Personal/General/jobsity_chalenge/build/app/intermediates/res/merged/debug/mipmap-xxxhdpi_ic_launcher.png.flat",
         "source": "/Users/RB159810/Documents/Development/Repositories/Personal/General/jobsity_chalenge/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/RB159810/Documents/Development/Repositories/Personal/General/jobsity_chalenge/build/app/intermediates/res/merged/debug/mipmap-mdpi_ic_launcher.png.flat",
+        "source": "/Users/RB159810/Documents/Development/Repositories/Personal/General/jobsity_chalenge/android/app/src/main/res/mipmap-mdpi/ic_launcher.png"
     },
     {
         "merged": "/Users/RB159810/Documents/Development/Repositories/Personal/General/jobsity_chalenge/build/app/intermediates/res/merged/debug/drawable-v21_launch_background.xml.flat",

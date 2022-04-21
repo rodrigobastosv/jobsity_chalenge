@@ -17,9 +17,6 @@ Future<void> main() async {
 
   await openBoxes();
 
-  // TODO: remove mock pin later
-  await userPinBox.put('USER_PIN', 1);
-
   runApp(
     RepositoryProviders(
       client: getDefaultClient(),
