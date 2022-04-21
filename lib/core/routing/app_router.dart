@@ -7,6 +7,9 @@ import 'package:jobsity_chalenge/core/routing/routes.dart';
 import 'package:jobsity_chalenge/page/episode_details/episode_details.dart';
 import 'package:jobsity_chalenge/page/favorite_shows/favorite_shows.dart';
 import 'package:jobsity_chalenge/page/home/home.dart';
+import 'package:jobsity_chalenge/page/people_search/data/data.dart';
+import 'package:jobsity_chalenge/page/people_search/people_search.dart';
+import 'package:jobsity_chalenge/page/people_search/presenter/cubit/people_search_cubit.dart';
 import 'package:jobsity_chalenge/page/show_details/show_details.dart';
 
 import '../../page/home/data/repository/home_repository.dart';
@@ -45,6 +48,13 @@ class AppRouter {
           repository: context.read<FavoriteShowsRepository>(),
         )..fetchFavoriteShows(),
         child: const FavoriteShowsPage(),
+      );
+    } else if (routeName == peopleSearchPage) {
+      routeWidget = BlocProvider<PeopleSearchCubit>(
+        create: (context) => PeopleSearchCubit(
+          repository: context.read<PeopleSearchRepository>(),
+        )..fetchPeople(),
+        child: const PeopleSearchPage(),
       );
     } else {
       routeWidget = const Scaffold();

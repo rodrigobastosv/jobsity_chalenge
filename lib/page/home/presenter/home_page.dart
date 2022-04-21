@@ -109,7 +109,7 @@ class HomePage extends StatelessWidget {
                 subtitle: 'Find people you want to know more about',
                 subTitleColor: Colors.white,
                 backgroundColor: Colors.green,
-                onTap: () => debugPrint('SECOND CHILD'),
+                onTap: () => Navigator.of(context).pushNamed(peopleSearchPage),
               ),
               ExpandableFabMenuItem(
                 child: const Icon(Icons.settings, color: Colors.white),
