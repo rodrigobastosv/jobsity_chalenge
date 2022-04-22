@@ -46,7 +46,9 @@ class HomePage extends StatelessWidget {
           ? const LoadingIndicator()
           : Padding(
               padding: const EdgeInsets.all(24),
-              child: ShowsListView(state.shows),
+              child: state.shows.isNotEmpty
+                  ? ShowsListView(state.shows)
+                  : const EmptyShowList(),
             ),
       floatingActionButton: const HomeMenu(),
     );

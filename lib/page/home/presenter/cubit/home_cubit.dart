@@ -56,36 +56,40 @@ class HomeCubit extends Cubit<HomeState> {
   }
 
   Future<void> fetchShowsByQuery() async {
-    emit(
-      state.copyWith(
-        status: HomeStatus.loading,
-      ),
-    );
+    if (state.query.isEmpty) {
+      await fetchShowsByPage(0);
+    } else {
+      emit(
+        state.copyWith(
+          status: HomeStatus.loading,
+        ),
+      );
 
-    try {
-      final shows = await _repository.fetchShowsByQuery(state.query);
-      emit(
-        state.copyWith(
-          status: HomeStatus.success,
-          shows: shows,
-        ),
-      );
-    } on FetchShowException catch (e) {
-      emit(
-        state.copyWith(
-          status: HomeStatus.failure,
-          shows: [],
-          errorMessage: e.errorMessage,
-        ),
-      );
-    } on UnknownException catch (e) {
-      emit(
-        state.copyWith(
-          status: HomeStatus.failure,
-          shows: [],
-          errorMessage: e.errorMessage,
-        ),
-      );
+      try {
+        final shows = await _repository.fetchShowsByQuery(state.query);
+        emit(
+          state.copyWith(
+            status: HomeStatus.success,
+            shows: shows,
+          ),
+        );
+      } on FetchShowException catch (e) {
+        emit(
+          state.copyWith(
+            status: HomeStatus.failure,
+            shows: [],
+            errorMessage: e.errorMessage,
+          ),
+        );
+      } on UnknownException catch (e) {
+        emit(
+          state.copyWith(
+            status: HomeStatus.failure,
+            shows: [],
+            errorMessage: e.errorMessage,
+          ),
+        );
+      }
     }
   }
 }

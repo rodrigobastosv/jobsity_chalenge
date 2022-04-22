@@ -52,10 +52,13 @@ class PeopleSearchPage extends StatelessWidget {
                     arguments: state.people[i],
                   ),
                   leading: state.people[i].mediumImage != null
-                      ? CircleAvatar(
-                          backgroundImage:
-                              NetworkImage(state.people[i].mediumImage!),
-                        )
+                      ? Hero(
+                        tag: 'person_${state.people[i]}',
+                        child: CircleAvatar(
+                            backgroundImage:
+                                NetworkImage(state.people[i].mediumImage!),
+                          ),
+                      )
                       : const Icon(Icons.person),
                   title: Text(state.people[i].name!),
                 ),

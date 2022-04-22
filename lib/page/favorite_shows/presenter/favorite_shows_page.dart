@@ -1,3 +1,4 @@
+import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:jobsity_chalenge/page/favorite_shows/favorite_shows.dart';
@@ -14,29 +15,52 @@ class FavoriteShowsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<FavoriteShowsCubit, FavoriteShowsState>(
-      builder: (_, state) => Scaffold(
-        body: state.status == FavoriteShowsStatus.loading
-            ? const Center(
-                child: CircularProgressIndicator(),
-              )
-            : ListView.builder(
-                itemBuilder: (_, i) => ListTile(
-                  onTap: () => Navigator.of(context).pushNamed(
-                    showDetailsPage,
-                    arguments: state.shows[i],
-                  ),
-                  title: Text(state.shows[i].name!),
-                  trailing: IconButton(
-                    onPressed: () => context
-                        .read<FavoriteShowsCubit>()
-                        .deleteFavoriteShow(state.shows[i].id),
-                    icon: const Icon(
-                      Icons.delete_forever,
+      builder: (_, state) => SafeArea(
+        child: Scaffold(
+          body: Padding(
+            padding: const EdgeInsets.all(8),
+            child: SingleChildScrollView(
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  const Text(
+                    'Favorite Shows',
+                    style: TextStyle(
+                      fontSize: 24,
                     ),
                   ),
-                ),
-                itemCount: state.shows.length,
+                  const SizedBox(height: 18),
+                  state.status == FavoriteShowsStatus.loading
+                      ? const Center(
+                          child: CircularProgressIndicator(),
+                        )
+                      : SizedBox(
+                        height: MediaQuery.of(context).size.height,
+                        child: GridView.builder(
+                          shrinkWrap: true,
+                          gridDelegate:
+                              const SliverGridDelegateWithFixedCrossAxisCount(
+                            crossAxisCount: 2,
+                            crossAxisSpacing: 8,
+                            mainAxisSpacing: 8,
+                          ),
+                          itemBuilder: (_, i) => GestureDetector(
+                            onTap: () => Navigator.of(context).pushNamed(
+                              showDetailsPage,
+                              arguments: state.shows[i],
+                            ),
+                            child: FancyShimmerImage(
+                              imageUrl: state.shows[i].originalImage!,
+                            ),
+                          ),
+                          itemCount: state.shows.length,
+                        ),
+                      )
+                ],
               ),
+            ),
+          ),
+        ),
       ),
     );
   }

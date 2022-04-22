@@ -22,7 +22,7 @@ class ShowsListView extends StatelessWidget {
           arguments: shows[i],
         ),
         child: Card(
-          color: Colors.grey[300],
+          color: Colors.grey[200],
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
@@ -32,9 +32,12 @@ class ShowsListView extends StatelessWidget {
                     topLeft: Radius.circular(8),
                     topRight: Radius.circular(8),
                   ),
-                  child: FancyShimmerImage(
-                    imageUrl: shows[i].originalImage!,
-                    boxFit: BoxFit.cover,
+                  child: Hero(
+                    tag: shows[i].id,
+                    child: FancyShimmerImage(
+                      imageUrl: shows[i].originalImage!,
+                      boxFit: BoxFit.cover,
+                    ),
                   ),
                 ),
               Padding(
