@@ -45,6 +45,20 @@ class SignInPage extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 18),
+            if (state.status == SignInStatus.loading)
+              const Center(
+                child: CircularProgressIndicator(),
+              )
+            else
+              state.canCheckBiometrics ?? false
+                  ? ElevatedButton.icon(
+                      onPressed: () =>
+                          context.read<SignInCubit>().authWithFingeprint(),
+                      icon: const Icon(Icons.fingerprint),
+                      label: const Text('SignIn with Fingerprint'),
+                    )
+                  : const SizedBox.shrink(),
+            const SizedBox(height: 18),
             Text.rich(
               TextSpan(
                 children: [
