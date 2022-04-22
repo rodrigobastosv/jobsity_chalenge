@@ -18,6 +18,15 @@ class SignInCubit extends Cubit<SignInState> {
   final Box _userPinBox;
   final SignInRepository _repository;
 
+  void onChangePin(String pin) {
+    emit(
+      state.copyWith(
+        status: SignInStatus.initial,
+        pin: pin,
+      ),
+    );
+  }
+
   Future<void> checkForBioSupport() async {
     emit(
       state.copyWith(

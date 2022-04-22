@@ -8,18 +8,39 @@ import 'package:pinput/pinput.dart';
 import '../../../ui/ui.dart';
 import 'cubit/sign_in_state.dart';
 
-class SignInPage extends StatelessWidget {
+class SignInPage extends StatefulWidget {
   const SignInPage({
     Key? key,
   }) : super(key: key);
+
+  @override
+  State<SignInPage> createState() => _SignInPageState();
+}
+
+class _SignInPageState extends State<SignInPage> {
+
+  late TextEditingController _pinController;
+
+  @override
+  void initState() {
+    _pinController = TextEditingController();
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    _pinController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<SignInCubit, SignInState>(
       listener: (context, state) {
         if (state.status == SignInStatus.success) {
-          Navigator.of(context).pushNamed(homePage);
+          Navigator.of(context).pushReplacementNamed(homePage);
         } else if (state.status == SignInStatus.failure) {
+          _pinController.clear();
           showErrorNotification(
             context,
             title: 'Incorrect PIN',
@@ -32,15 +53,19 @@ class SignInPage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
+            const Logo(),
+            const SizedBox(height: 36),
             const Text(
               'Enter your PIN to enter the App!',
             ),
             const SizedBox(height: 18),
             Center(
               child: Pinput(
+                controller: _pinController,
                 length: 4,
                 pinputAutovalidateMode: PinputAutovalidateMode.onSubmit,
                 showCursor: true,
+                onChanged: context.read<SignInCubit>().onChangePin,
                 onCompleted: context.read<SignInCubit>().signInUser,
               ),
             ),

@@ -28,6 +28,8 @@ class SignUpPage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
+            const Logo(),
+            const SizedBox(height: 36),
             const Text(
               'Pick a secret PIN to enter the App!',
             ),
