@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
-import 'package:jobsity_chalenge/core/data/model/show_episode_model.dart';
 
+import 'package:jobsity_chalenge/core/data/model/show_episode_model.dart';
 import '../../../../core/core.dart';
 import '../data.dart';
 

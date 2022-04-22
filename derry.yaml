@@ -1,0 +1,12 @@
+clean:
+  - rm pubspec.lock
+  - flutter clean
+  - flutter pub get
+
+tests:
+  - flutter test --no-pub --no-test-assets --coverage --test-randomize-ordering-seed random
+  - genhtml coverage/lcov.info -o coverage/html
+
+format:
+  - flutter format .
+  - flutter pub run import_sorter:main

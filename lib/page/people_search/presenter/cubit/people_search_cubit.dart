@@ -1,6 +1,6 @@
 import 'package:bloc/bloc.dart';
-import 'package:jobsity_chalenge/page/people_search/data/data.dart';
 
+import 'package:jobsity_chalenge/page/people_search/data/data.dart';
 import '../../../../core/core.dart';
 import 'people_search_state.dart';
 

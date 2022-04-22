@@ -1,9 +1,10 @@
-import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:flutter/material.dart';
+
+import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
 import 'package:jobsity_chalenge/core/core.dart';
 import 'package:jobsity_chalenge/page/show_details/show_details.dart';
-
 import 'cubit/show_details_state.dart';
 
 class ShowDetailsPage extends StatelessWidget {

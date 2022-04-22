@@ -1,6 +1,6 @@
 import 'package:equatable/equatable.dart';
-import 'package:jobsity_chalenge/core/data/model/show_episode_model.dart';
 
+import 'package:jobsity_chalenge/core/data/model/show_episode_model.dart';
 import '../../../../core/data/model/model.dart';
 
 enum ShowDetailsStatus {
@@ -28,13 +28,13 @@ class ShowDetailsState extends Equatable {
   });
 
   factory ShowDetailsState.initial(ShowModel show) => ShowDetailsState(
-    show: show,
-    isShowFavorited: null,
-    episodes: const [],
-    status: ShowDetailsStatus.initial,
-    query: '',
-    errorMessage: '',
-  );
+        show: show,
+        isShowFavorited: null,
+        episodes: const [],
+        status: ShowDetailsStatus.initial,
+        query: '',
+        errorMessage: '',
+      );
 
   ShowDetailsState copyWith({
     ShowModel? show,

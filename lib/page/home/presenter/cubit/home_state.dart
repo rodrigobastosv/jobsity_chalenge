@@ -23,11 +23,11 @@ class HomeState extends Equatable {
   });
 
   factory HomeState.initial() => const HomeState(
-    status: HomeStatus.initial,
-    shows: [],
-    query: '',
-    errorMessage: '',
-  );
+        status: HomeStatus.initial,
+        shows: [],
+        query: '',
+        errorMessage: '',
+      );
 
   HomeState copyWith({
     HomeStatus? status,

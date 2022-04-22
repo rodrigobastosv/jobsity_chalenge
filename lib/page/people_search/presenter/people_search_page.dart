@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:jobsity_chalenge/page/people_search/people_search.dart';
 
+import 'package:flutter_bloc/flutter_bloc.dart';
+
+import 'package:jobsity_chalenge/page/people_search/people_search.dart';
 import '../../../core/core.dart';
 import 'cubit/people_search_state.dart';
 
@@ -53,12 +54,12 @@ class PeopleSearchPage extends StatelessWidget {
                   ),
                   leading: state.people[i].mediumImage != null
                       ? Hero(
-                        tag: 'person_${state.people[i]}',
-                        child: CircleAvatar(
+                          tag: 'person_${state.people[i]}',
+                          child: CircleAvatar(
                             backgroundImage:
                                 NetworkImage(state.people[i].mediumImage!),
                           ),
-                      )
+                        )
                       : const Icon(Icons.person),
                   title: Text(state.people[i].name!),
                 ),

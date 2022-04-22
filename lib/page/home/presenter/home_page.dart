@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+
 import 'package:flutter_bloc/flutter_bloc.dart';
+
 import 'package:jobsity_chalenge/page/home/home.dart';
 import 'package:jobsity_chalenge/page/home/presenter/widget/widget.dart';
 import 'package:jobsity_chalenge/ui/widget/loading_indicator.dart';
-
 import 'cubit/home_state.dart';
 
 class HomePage extends StatelessWidget {

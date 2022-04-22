@@ -1,8 +1,9 @@
-import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:jobsity_chalenge/page/favorite_shows/favorite_shows.dart';
 
+import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+
+import 'package:jobsity_chalenge/page/favorite_shows/favorite_shows.dart';
 import '../../../core/core.dart';
 import 'cubit/favorite_shows_state.dart';
 import 'presenter.dart';
@@ -35,27 +36,27 @@ class FavoriteShowsPage extends StatelessWidget {
                           child: CircularProgressIndicator(),
                         )
                       : SizedBox(
-                        height: MediaQuery.of(context).size.height,
-                        child: GridView.builder(
-                          shrinkWrap: true,
-                          gridDelegate:
-                              const SliverGridDelegateWithFixedCrossAxisCount(
-                            crossAxisCount: 2,
-                            crossAxisSpacing: 8,
-                            mainAxisSpacing: 8,
-                          ),
-                          itemBuilder: (_, i) => GestureDetector(
-                            onTap: () => Navigator.of(context).pushNamed(
-                              showDetailsPage,
-                              arguments: state.shows[i],
+                          height: MediaQuery.of(context).size.height,
+                          child: GridView.builder(
+                            shrinkWrap: true,
+                            gridDelegate:
+                                const SliverGridDelegateWithFixedCrossAxisCount(
+                              crossAxisCount: 2,
+                              crossAxisSpacing: 8,
+                              mainAxisSpacing: 8,
                             ),
-                            child: FancyShimmerImage(
-                              imageUrl: state.shows[i].originalImage!,
+                            itemBuilder: (_, i) => GestureDetector(
+                              onTap: () => Navigator.of(context).pushNamed(
+                                showDetailsPage,
+                                arguments: state.shows[i],
+                              ),
+                              child: FancyShimmerImage(
+                                imageUrl: state.shows[i].originalImage!,
+                              ),
                             ),
+                            itemCount: state.shows.length,
                           ),
-                          itemCount: state.shows.length,
-                        ),
-                      )
+                        )
                 ],
               ),
             ),

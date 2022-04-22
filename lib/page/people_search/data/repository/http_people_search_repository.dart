@@ -36,12 +36,10 @@ class HttpPeopleSearchRepository implements PeopleSearchRepository {
   @override
   Future<List<PersonModel>> fetchPeopleByQuery(String query) async {
     try {
-      final clientResponse = await _client.get(
-        '/search/people',
-        queryParameters: {
-          'q': query,
-        }
-      );
+      final clientResponse =
+          await _client.get('/search/people', queryParameters: {
+        'q': query,
+      });
 
       if (clientResponse.statusCode == httpOk) {
         final listResponse = clientResponse.data as List;

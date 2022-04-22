@@ -31,7 +31,8 @@ class ShowEpisodeModel extends Equatable {
   final String? originalImage;
   final String? summary;
 
-  factory ShowEpisodeModel.fromJson(Map<String, dynamic> json) => ShowEpisodeModel(
+  factory ShowEpisodeModel.fromJson(Map<String, dynamic> json) =>
+      ShowEpisodeModel(
         id: json['id'],
         url: json['url'],
         name: json['name'],

@@ -1,6 +1,6 @@
 import 'package:bloc/bloc.dart';
-import 'package:jobsity_chalenge/core/data/model/show_model.dart';
 
+import 'package:jobsity_chalenge/core/data/model/show_model.dart';
 import '../../../../core/core.dart';
 import '../../data/data.dart';
 import 'show_details_state.dart';
@@ -34,7 +34,7 @@ class ShowDetailsCubit extends Cubit<ShowDetailsState> {
     } else {
       _showFavoriteInfoRepository.favoriteShow(state.show);
     }
-    
+
     emit(
       state.copyWith(
         isShowFavorited: !state.isShowFavorited!,

@@ -1,10 +1,11 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:jobsity_chalenge/core/core.dart';
-import 'package:jobsity_chalenge/page/sign_in/presenter/presenter.dart';
 import 'package:pinput/pinput.dart';
 
+import 'package:jobsity_chalenge/core/core.dart';
+import 'package:jobsity_chalenge/page/sign_in/presenter/presenter.dart';
 import '../../../ui/ui.dart';
 import 'cubit/sign_in_state.dart';
 
@@ -18,7 +19,6 @@ class SignInPage extends StatefulWidget {
 }
 
 class _SignInPageState extends State<SignInPage> {
-
   late TextEditingController _pinController;
 
   @override

@@ -1,6 +1,6 @@
 import 'package:equatable/equatable.dart';
-import 'package:jobsity_chalenge/core/data/model/show_model.dart';
 
+import 'package:jobsity_chalenge/core/data/model/show_model.dart';
 import '../../../people_search/data/data.dart';
 
 enum PersonDetailsStatus {
@@ -24,11 +24,11 @@ class PersonDetailsState extends Equatable {
   });
 
   factory PersonDetailsState.initial(PersonModel person) => PersonDetailsState(
-    person: person,
-    shows: const [],
-    status: PersonDetailsStatus.initial,
-    errorMessage: '',
-  );
+        person: person,
+        shows: const [],
+        status: PersonDetailsStatus.initial,
+        errorMessage: '',
+      );
 
   PersonDetailsState copyWith({
     PersonModel? person,

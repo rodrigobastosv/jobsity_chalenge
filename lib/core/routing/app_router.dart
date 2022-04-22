@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:local_auth/local_auth.dart';
+
 import 'package:jobsity_chalenge/core/data/model/show_episode_model.dart';
 import 'package:jobsity_chalenge/core/data/model/show_model.dart';
 import 'package:jobsity_chalenge/page/episode_details/episode_details.dart';
@@ -10,8 +12,6 @@ import 'package:jobsity_chalenge/page/people_search/people_search.dart';
 import 'package:jobsity_chalenge/page/person_details/person_details.dart';
 import 'package:jobsity_chalenge/page/show_details/show_details.dart';
 import 'package:jobsity_chalenge/page/sign_in/sign_in.dart';
-import 'package:local_auth/local_auth.dart';
-
 import '../../page/home/data/repository/home_repository.dart';
 import '../../page/sign_up/sign_up.dart';
 import '../core.dart';

@@ -1,7 +1,8 @@
-import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:flutter/material.dart';
-import 'package:jobsity_chalenge/core/data/model/show_model.dart';
 
+import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
+
+import 'package:jobsity_chalenge/core/data/model/show_model.dart';
 import '../../../../core/core.dart';
 
 class ShowsListView extends StatelessWidget {

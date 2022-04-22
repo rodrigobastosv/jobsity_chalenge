@@ -1,12 +1,13 @@
-import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+
+import 'package:dio/dio.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
 import 'package:jobsity_chalenge/core/core.dart';
 import 'package:jobsity_chalenge/page/home/data/repository/http_home_repository.dart';
 import 'package:jobsity_chalenge/page/people_search/data/data.dart';
 import 'package:jobsity_chalenge/page/person_details/person_details.dart';
 import 'package:jobsity_chalenge/page/sign_in/sign_in.dart';
-
 import 'page/favorite_shows/data/repository/repository.dart';
 import 'page/home/data/repository/home_repository.dart';
 import 'page/show_details/data/data.dart';

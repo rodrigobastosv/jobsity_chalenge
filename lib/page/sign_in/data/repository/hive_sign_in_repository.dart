@@ -10,12 +10,11 @@ class HiveSignInRepository implements SignInRepository {
   @override
   Future<bool> signInUser(String pin) async {
     final usersPins = _box.get('USERS_PIN_POOL') as List?;
-    
+
     if (usersPins?.contains(pin) ?? false) {
       _box.put('USER_PIN', pin);
     }
- 
+
     return usersPins?.contains(pin) ?? false;
   }
-
 }
