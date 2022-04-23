@@ -33,7 +33,9 @@
 /coverage/
 /metrics/
 .dart_tool/
+.dart_tool/flutter_build/
 build/
+.flutter-plugins-dependencies
 
 # Web related
 lib/generated_plugin_registrant.dart

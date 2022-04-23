@@ -30,7 +30,7 @@ To build the app, just run `flutter build apk --release` on the root folder
 - Animations with Lottie
 - CI, tests and code coverage
 
-# Infomration
+# Info
 - The app is using flutter_bloc for state management, more precisely the state management is done using cubit's
 - We have to store some local data, all this data is stored using Hive for local storage. This decision was made, because Hive is much faster than other options like Shared Preferences and Sqflite.
 - All the images that are fetched from the API are cached locally, so it can be loades faster.
