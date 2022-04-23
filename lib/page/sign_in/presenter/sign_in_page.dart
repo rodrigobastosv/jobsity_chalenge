@@ -77,6 +77,7 @@ class _SignInPageState extends State<SignInPage> {
             else
               state.canCheckBiometrics ?? false
                   ? ElevatedButton.icon(
+                    key: const ValueKey('fingerprint_button_key'),
                       onPressed: () =>
                           context.read<SignInCubit>().authWithFingeprint(),
                       icon: const Icon(Icons.fingerprint),
