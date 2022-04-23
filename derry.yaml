@@ -10,3 +10,4 @@ tests:
 format:
   - flutter format .
   - flutter pub run import_sorter:main
+  
