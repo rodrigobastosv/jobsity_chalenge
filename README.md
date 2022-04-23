@@ -1,3 +1,5 @@
+<a href="https://github.com/rodrigobastosv/jobsity_chalenge/actions"><img src="https://github.com/rodrigobastosv/jobsity_chalenge/workflows/build/badge.svg" alt="build"></a>
+
 # Jobsity Chalenge
 
 # Running the project
