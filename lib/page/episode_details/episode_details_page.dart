@@ -6,10 +6,7 @@ import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import '../../core/data/model/show_episode_model.dart';
 
 class EpisodeDetailsPage extends StatelessWidget {
-  const EpisodeDetailsPage(
-    this.episode, {
-    Key? key,
-  }) : super(key: key);
+  const EpisodeDetailsPage(this.episode);
 
   final ShowEpisodeModel episode;
 

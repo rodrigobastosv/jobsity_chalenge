@@ -8,10 +8,6 @@ import '../show_details.dart';
 import 'cubit/show_details_state.dart';
 
 class ShowDetailsPage extends StatelessWidget {
-  const ShowDetailsPage({
-    Key? key,
-  }) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<ShowDetailsCubit, ShowDetailsState>(

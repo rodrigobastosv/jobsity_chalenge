@@ -26,7 +26,7 @@ void main() {
         tester,
         widget: BlocProvider<SignUpCubit>.value(
           value: signUpCubitMock,
-          child: const SignUpPage(),
+          child: SignUpPage(),
         ),
       );
 
@@ -56,7 +56,7 @@ void main() {
             tester,
             widget: BlocProvider<SignUpCubit>.value(
               value: signUpCubitMock,
-              child: const SignUpPage(),
+              child: SignUpPage(),
             ),
           );
         },

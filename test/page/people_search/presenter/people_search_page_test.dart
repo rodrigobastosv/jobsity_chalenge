@@ -30,7 +30,7 @@ void main() {
         tester,
         widget: BlocProvider<PeopleSearchCubit>.value(
           value: cubitMock,
-          child: const PeopleSearchPage(),
+          child: PeopleSearchPage(),
         ),
       );
 
@@ -47,7 +47,7 @@ void main() {
         tester,
         widget: BlocProvider<PeopleSearchCubit>.value(
           value: cubitMock,
-          child: const PeopleSearchPage(),
+          child: PeopleSearchPage(),
         ),
       );
 
@@ -67,7 +67,7 @@ void main() {
         tester,
         widget: BlocProvider<PeopleSearchCubit>.value(
           value: cubitMock,
-          child: const PeopleSearchPage(),
+          child: PeopleSearchPage(),
         ),
       );
 
@@ -90,7 +90,7 @@ void main() {
         tester,
         widget: BlocProvider<PeopleSearchCubit>.value(
           value: cubitMock,
-          child: const PeopleSearchPage(),
+          child: PeopleSearchPage(),
         ),
       );
 
@@ -111,7 +111,7 @@ void main() {
         tester,
         widget: BlocProvider<PeopleSearchCubit>.value(
           value: cubitMock,
-          child: const PeopleSearchPage(),
+          child: PeopleSearchPage(),
         ),
       );
 
@@ -147,7 +147,7 @@ void main() {
             mockNavigator,
             widget: BlocProvider<PeopleSearchCubit>.value(
               value: cubitMock,
-              child: const PeopleSearchPage(),
+              child: PeopleSearchPage(),
             ),
           );
 

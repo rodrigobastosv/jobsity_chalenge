@@ -5,10 +5,6 @@ import 'package:expandable_fab_menu/expandable_fab_menu.dart';
 import '../../../../core/core.dart';
 
 class HomeMenu extends StatelessWidget {
-  const HomeMenu({
-    Key? key,
-  }) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return ExpandableFabMenu(

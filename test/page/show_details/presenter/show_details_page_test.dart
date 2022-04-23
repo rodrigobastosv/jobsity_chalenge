@@ -34,7 +34,7 @@ void main() {
         tester,
         widget: BlocProvider<ShowDetailsCubit>.value(
           value: cubitMock,
-          child: const ShowDetailsPage(),
+          child: ShowDetailsPage(),
         ),
       );
 
@@ -56,7 +56,7 @@ void main() {
         tester,
         widget: BlocProvider<ShowDetailsCubit>.value(
           value: cubitMock,
-          child: const ShowDetailsPage(),
+          child: ShowDetailsPage(),
         ),
       );
 
@@ -78,7 +78,7 @@ void main() {
         tester,
         widget: BlocProvider<ShowDetailsCubit>.value(
           value: cubitMock,
-          child: const ShowDetailsPage(),
+          child: ShowDetailsPage(),
         ),
       );
 
@@ -109,7 +109,7 @@ void main() {
             tester,
             widget: BlocProvider<ShowDetailsCubit>.value(
               value: cubitMock,
-              child: const ShowDetailsPage(),
+              child: ShowDetailsPage(),
             ),
           );
 
@@ -148,7 +148,7 @@ void main() {
             mockNavigator,
             widget: BlocProvider<ShowDetailsCubit>.value(
               value: cubitMock,
-              child: const ShowDetailsPage(),
+              child: ShowDetailsPage(),
             ),
           );
 

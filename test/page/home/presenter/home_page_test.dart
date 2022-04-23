@@ -30,7 +30,7 @@ void main() {
         tester,
         widget: BlocProvider<HomeCubit>.value(
           value: cubitMock,
-          child: const HomePage(),
+          child: HomePage(),
         ),
       );
 
@@ -47,7 +47,7 @@ void main() {
         tester,
         widget: BlocProvider<HomeCubit>.value(
           value: cubitMock,
-          child: const HomePage(),
+          child: HomePage(),
         ),
       );
 
@@ -67,7 +67,7 @@ void main() {
         tester,
         widget: BlocProvider<HomeCubit>.value(
           value: cubitMock,
-          child: const HomePage(),
+          child: HomePage(),
         ),
       );
 
@@ -90,7 +90,7 @@ void main() {
         tester,
         widget: BlocProvider<HomeCubit>.value(
           value: cubitMock,
-          child: const HomePage(),
+          child: HomePage(),
         ),
       );
 
@@ -116,7 +116,7 @@ void main() {
         tester,
         widget: BlocProvider<HomeCubit>.value(
           value: cubitMock,
-          child: const HomePage(),
+          child: HomePage(),
         ),
       );
 

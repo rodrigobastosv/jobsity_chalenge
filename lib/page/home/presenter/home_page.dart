@@ -8,10 +8,6 @@ import 'cubit/home_state.dart';
 import 'widget/widget.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({
-    Key? key,
-  }) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     final homeCubit = context.watch<HomeCubit>();
@@ -44,14 +40,14 @@ class HomePage extends StatelessWidget {
         ],
       ),
       body: state.status == HomeStatus.loading
-          ? const LoadingIndicator()
+          ? LoadingIndicator()
           : Padding(
               padding: const EdgeInsets.all(24),
               child: state.shows.isNotEmpty
                   ? ShowsListView(state.shows)
-                  : const EmptyShowList(),
+                  : EmptyShowList(),
             ),
-      floatingActionButton: const HomeMenu(),
+      floatingActionButton: HomeMenu(),
     );
   }
 }

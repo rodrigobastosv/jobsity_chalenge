@@ -8,10 +8,6 @@ import '../person_details.dart';
 import 'cubit/person_details_state.dart';
 
 class PersonDetailsPage extends StatelessWidget {
-  const PersonDetailsPage({
-    Key? key,
-  }) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     final person = context.read<PersonDetailsCubit>().state.person;

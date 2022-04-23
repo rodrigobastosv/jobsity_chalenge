@@ -8,10 +8,6 @@ import '../sign_up.dart';
 import 'cubit/sign_up_state.dart';
 
 class SignUpPage extends StatelessWidget {
-  const SignUpPage({
-    Key? key,
-  }) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return BlocConsumer<SignUpCubit, SignUpState>(
@@ -29,7 +25,7 @@ class SignUpPage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            const Logo(),
+            Logo(),
             const SizedBox(height: 36),
             const Text(
               'Pick a secret PIN to enter the App!',

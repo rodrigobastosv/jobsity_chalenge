@@ -10,10 +10,6 @@ import 'cubit/sign_in_state.dart';
 import 'presenter.dart';
 
 class SignInPage extends StatefulWidget {
-  const SignInPage({
-    Key? key,
-  }) : super(key: key);
-
   @override
   State<SignInPage> createState() => _SignInPageState();
 }
@@ -53,7 +49,7 @@ class _SignInPageState extends State<SignInPage> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            const Logo(),
+            Logo(),
             const SizedBox(height: 36),
             const Text(
               'Enter your PIN to enter the App!',

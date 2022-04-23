@@ -7,10 +7,6 @@ import '../people_search.dart';
 import 'cubit/people_search_state.dart';
 
 class PeopleSearchPage extends StatelessWidget {
-  const PeopleSearchPage({
-    Key? key,
-  }) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<PeopleSearchCubit, PeopleSearchState>(

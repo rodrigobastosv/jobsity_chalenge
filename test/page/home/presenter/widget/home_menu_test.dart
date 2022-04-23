@@ -10,7 +10,7 @@ void main() {
     (tester) async {
       await pumpWidgetWithApp(
         tester,
-        widget: const HomeMenu(),
+        widget: HomeMenu(),
       );
 
       final menuButton = find.byType(ExpandableFabMenu);

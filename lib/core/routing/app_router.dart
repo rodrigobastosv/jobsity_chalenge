@@ -29,21 +29,21 @@ class AppRouter {
           userPinBox: userPinBox,
           repository: context.read<SignInRepository>(),
         )..checkForBioSupport(),
-        child: const SignInPage(),
+        child: SignInPage(),
       );
     } else if (routeName == signUpPage) {
       routeWidget = BlocProvider<SignUpCubit>(
         create: (context) => SignUpCubit(
           repository: context.read<SignUpRepository>(),
         ),
-        child: const SignUpPage(),
+        child: SignUpPage(),
       );
     } else if (routeName == homePage) {
       routeWidget = BlocProvider<HomeCubit>(
         create: (context) => HomeCubit(
           repository: context.read<HomeRepository>(),
         )..fetchShowsByPage(0),
-        child: const HomePage(),
+        child: HomePage(),
       );
     } else if (routeName == showDetailsPage) {
       routeWidget = BlocProvider<ShowDetailsCubit>(
@@ -55,7 +55,7 @@ class AppRouter {
         )
           ..loadFavoritedInfo()
           ..fetchShowEpisodes(),
-        child: const ShowDetailsPage(),
+        child: ShowDetailsPage(),
       );
     } else if (routeName == episodeDetailsPage) {
       final episode = args! as ShowEpisodeModel;
@@ -72,7 +72,7 @@ class AppRouter {
         create: (context) => PeopleSearchCubit(
           repository: context.read<PeopleSearchRepository>(),
         )..fetchPeople(),
-        child: const PeopleSearchPage(),
+        child: PeopleSearchPage(),
       );
     } else if (routeName == personDetailsPage) {
       routeWidget = BlocProvider<PersonDetailsCubit>(
@@ -80,7 +80,7 @@ class AppRouter {
           person: args! as PersonModel,
           repository: context.read<PersonDetailsRepository>(),
         )..fetchShows(),
-        child: const PersonDetailsPage(),
+        child: PersonDetailsPage(),
       );
     } else {
       routeWidget = const Scaffold();

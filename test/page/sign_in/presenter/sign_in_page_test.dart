@@ -29,7 +29,7 @@ void main() {
         tester,
         widget: BlocProvider<SignInCubit>.value(
           value: signInCubitMock,
-          child: const SignInPage(),
+          child: SignInPage(),
         ),
       );
 
@@ -50,7 +50,7 @@ void main() {
         tester,
         widget: BlocProvider<SignInCubit>.value(
           value: signInCubitMock,
-          child: const SignInPage(),
+          child: SignInPage(),
         ),
       );
 
@@ -74,7 +74,7 @@ void main() {
         tester,
         widget: BlocProvider<SignInCubit>.value(
           value: signInCubitMock,
-          child: const SignInPage(),
+          child: SignInPage(),
         ),
       );
 
@@ -116,7 +116,7 @@ void main() {
         mockNavigator,
         widget: BlocProvider<SignInCubit>.value(
           value: signInCubitMock,
-          child: const SignInPage(),
+          child: SignInPage(),
         ),
       );
 
@@ -153,7 +153,7 @@ void main() {
             tester,
             widget: BlocProvider<SignInCubit>.value(
               value: signInCubitMock,
-              child: const SignInPage(),
+              child: SignInPage(),
             ),
           );
           await tester.pump();
@@ -184,7 +184,7 @@ void main() {
         mockNavigator,
         widget: BlocProvider<SignInCubit>.value(
           value: signInCubitMock,
-          child: const SignInPage(),
+          child: SignInPage(),
         ),
       );
 
