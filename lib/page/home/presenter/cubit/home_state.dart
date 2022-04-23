@@ -14,12 +14,14 @@ class HomeState extends Equatable {
   final List<ShowModel> shows;
   final String query;
   final String errorMessage;
+  final int page;
 
   const HomeState({
     required this.status,
     required this.shows,
     required this.query,
     required this.errorMessage,
+    required this.page,
   });
 
   factory HomeState.initial() => const HomeState(
@@ -27,6 +29,7 @@ class HomeState extends Equatable {
         shows: [],
         query: '',
         errorMessage: '',
+        page: 0,
       );
 
   HomeState copyWith({
@@ -34,12 +37,14 @@ class HomeState extends Equatable {
     List<ShowModel>? shows,
     String? query,
     String? errorMessage,
+    int? page,
   }) {
     return HomeState(
       status: status ?? this.status,
       shows: shows ?? this.shows,
       query: query ?? this.query,
       errorMessage: errorMessage ?? this.errorMessage,
+      page: page ?? this.page,
     );
   }
 
@@ -49,5 +54,6 @@ class HomeState extends Equatable {
         shows,
         query,
         errorMessage,
+        page,
       ];
 }

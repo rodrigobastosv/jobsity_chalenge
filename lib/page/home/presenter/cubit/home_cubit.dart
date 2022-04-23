@@ -21,7 +21,7 @@ class HomeCubit extends Cubit<HomeState> {
     );
   }
 
-  Future<void> fetchShowsByPage(int page) async {
+  Future<void> fetchShowsByPage() async {
     emit(
       state.copyWith(
         status: HomeStatus.loading,
@@ -29,11 +29,15 @@ class HomeCubit extends Cubit<HomeState> {
     );
 
     try {
-      final shows = await _repository.fetchShows(page);
+      final shows = await _repository.fetchShows(state.page);
       emit(
         state.copyWith(
           status: HomeStatus.success,
-          shows: shows,
+          shows: [
+            ...state.shows,
+            ...shows,
+          ],
+          page: state.page + 1,
         ),
       );
     } on FetchShowException catch (e) {
@@ -57,7 +61,12 @@ class HomeCubit extends Cubit<HomeState> {
 
   Future<void> fetchShowsByQuery() async {
     if (state.query.isEmpty) {
-      await fetchShowsByPage(0);
+      emit(
+        state.copyWith(
+          page: 0,
+        ),
+      );
+      await fetchShowsByPage();
     } else {
       emit(
         state.copyWith(

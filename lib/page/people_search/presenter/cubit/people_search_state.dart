@@ -14,12 +14,14 @@ class PeopleSearchState extends Equatable {
   final PeopleSearchStatus status;
   final String query;
   final String errorMessage;
+  final int page;
 
   const PeopleSearchState({
     required this.people,
     required this.status,
     required this.query,
     required this.errorMessage,
+    required this.page,
   });
 
   factory PeopleSearchState.initial() => const PeopleSearchState(
@@ -27,6 +29,7 @@ class PeopleSearchState extends Equatable {
         status: PeopleSearchStatus.initial,
         query: '',
         errorMessage: '',
+        page: 0,
       );
 
   PeopleSearchState copyWith({
@@ -34,12 +37,14 @@ class PeopleSearchState extends Equatable {
     PeopleSearchStatus? status,
     String? query,
     String? errorMessage,
+    int? page,
   }) {
     return PeopleSearchState(
       people: people ?? this.people,
       status: status ?? this.status,
       query: query ?? this.query,
       errorMessage: errorMessage ?? this.errorMessage,
+      page: page ?? this.page,
     );
   }
 

@@ -7,7 +7,6 @@ import 'package:mockingjay/mockingjay.dart';
 import 'package:jobsity_chalenge/page/home/home.dart';
 import 'package:jobsity_chalenge/page/home/presenter/cubit/home_state.dart';
 import 'package:jobsity_chalenge/page/home/presenter/widget/widget.dart';
-import 'package:jobsity_chalenge/ui/ui.dart';
 import '../../../data.dart';
 import '../../../mock.dart';
 import '../../../utils.dart';
@@ -94,7 +93,7 @@ void main() {
         ),
       );
 
-      expect(find.byType(LoadingIndicator), findsOneWidget);
+      expect(find.byType(CircularProgressIndicator), findsOneWidget);
     },
   );
 

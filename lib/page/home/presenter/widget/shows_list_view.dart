@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
 
 import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:very_good_infinite_list/very_good_infinite_list.dart';
 
 import '../../../../core/core.dart';
 import '../../../../core/data/model/show_model.dart';
+import '../../home.dart';
+import '../cubit/home_state.dart';
+import 'empty_show_list.dart';
 
 class ShowsListView extends StatelessWidget {
   const ShowsListView(
@@ -15,8 +20,21 @@ class ShowsListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.separated(
-      shrinkWrap: true,
+    return InfiniteList(
+      itemCount: shows.length,
+      isLoading: context.watch<HomeCubit>().state.status == HomeStatus.loading,
+      onFetchData: context.read<HomeCubit>().fetchShowsByPage,
+      emptyBuilder: (_) => EmptyShowList(),
+      loadingBuilder: (_) => const Padding(
+        padding: EdgeInsets.all(8.0),
+        child: Center(
+          child: SizedBox(
+            width: 30,
+            height: 30,
+            child: CircularProgressIndicator(),
+          ),
+        ),
+      ),
       itemBuilder: (_, i) => InkWell(
         onTap: () => Navigator.of(context).pushNamed(
           showDetailsPage,
@@ -55,8 +73,7 @@ class ShowsListView extends StatelessWidget {
           ),
         ),
       ),
-      separatorBuilder: (_, i) => const SizedBox(height: 8),
-      itemCount: shows.length,
+      separatorBuilder: (_) => const SizedBox(height: 8),
     );
   }
 }

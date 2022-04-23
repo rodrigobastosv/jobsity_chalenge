@@ -9,10 +9,13 @@ class HttpPeopleSearchRepository implements PeopleSearchRepository {
   final Dio _client;
 
   @override
-  Future<List<PersonModel>> fetchPeople() async {
+  Future<List<PersonModel>> fetchPeopleByPage(int page) async {
     try {
       final clientResponse = await _client.get(
         '/people',
+        queryParameters: {
+          'page': page,
+        },
       );
 
       if (clientResponse.statusCode == httpOk) {

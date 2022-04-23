@@ -42,7 +42,7 @@ class AppRouter {
       routeWidget = BlocProvider<HomeCubit>(
         create: (context) => HomeCubit(
           repository: context.read<HomeRepository>(),
-        )..fetchShowsByPage(0),
+        )..fetchShowsByPage(),
         child: HomePage(),
       );
     } else if (routeName == showDetailsPage) {

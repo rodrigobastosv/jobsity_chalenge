@@ -2,9 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../ui/widget/loading_indicator.dart';
 import '../home.dart';
-import 'cubit/home_state.dart';
 import 'widget/widget.dart';
 
 class HomePage extends StatelessWidget {
@@ -39,14 +37,10 @@ class HomePage extends StatelessWidget {
           const SizedBox(width: 8),
         ],
       ),
-      body: state.status == HomeStatus.loading
-          ? LoadingIndicator()
-          : Padding(
-              padding: const EdgeInsets.all(24),
-              child: state.shows.isNotEmpty
-                  ? ShowsListView(state.shows)
-                  : EmptyShowList(),
-            ),
+      body: Padding(
+        padding: const EdgeInsets.all(24),
+        child: ShowsListView(state.shows),
+      ),
       floatingActionButton: HomeMenu(),
     );
   }

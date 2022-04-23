@@ -28,11 +28,15 @@ class PeopleSearchCubit extends Cubit<PeopleSearchState> {
     );
 
     try {
-      final people = await _repository.fetchPeople();
+      final people = await _repository.fetchPeopleByPage(state.page);
       emit(
         state.copyWith(
           status: PeopleSearchStatus.success,
-          people: people,
+          people: [
+            ...state.people,
+            ...people,
+          ],
+          page: state.page + 1,
         ),
       );
     } on FetchPeopleSearchException catch (e) {
@@ -65,6 +69,7 @@ class PeopleSearchCubit extends Cubit<PeopleSearchState> {
         state.copyWith(
           status: PeopleSearchStatus.success,
           people: people,
+          page: 0,
         ),
       );
     } on FetchPeopleSearchException catch (e) {

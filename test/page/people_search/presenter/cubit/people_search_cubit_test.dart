@@ -48,7 +48,7 @@ void main() {
       blocTest<PeopleSearchCubit, PeopleSearchState>(
         'emits loading, success when fetchPeople is success',
         build: () {
-          when(() => repositoryMock.fetchPeople()).thenAnswer(
+          when(() => repositoryMock.fetchPeopleByPage(0)).thenAnswer(
             (_) async => [],
           );
           return PeopleSearchCubit(
@@ -62,12 +62,14 @@ void main() {
             people: [],
             query: '',
             errorMessage: '',
+            page: 0,
           ),
           const PeopleSearchState(
             status: PeopleSearchStatus.success,
             people: [],
             query: '',
             errorMessage: '',
+            page: 1,
           ),
         ],
       );
@@ -75,7 +77,7 @@ void main() {
       blocTest<PeopleSearchCubit, PeopleSearchState>(
         'emits failure with errorMessage when fetchPeople throws FetchPeopleSearchException',
         build: () {
-          when(() => repositoryMock.fetchPeople()).thenThrow(
+          when(() => repositoryMock.fetchPeopleByPage(0)).thenThrow(
             FetchPeopleSearchException('error'),
           );
           return PeopleSearchCubit(
@@ -89,12 +91,14 @@ void main() {
             people: [],
             query: '',
             errorMessage: '',
+            page: 0,
           ),
           const PeopleSearchState(
             status: PeopleSearchStatus.failure,
             people: [],
             query: '',
             errorMessage: 'error',
+            page: 1,
           ),
         ],
       );
@@ -102,7 +106,7 @@ void main() {
       blocTest<PeopleSearchCubit, PeopleSearchState>(
         'emits failure with errorMessage when fetchPeople throws UnknownException',
         build: () {
-          when(() => repositoryMock.fetchPeople()).thenThrow(
+          when(() => repositoryMock.fetchPeopleByPage(0)).thenThrow(
             UnknownException(),
           );
           return PeopleSearchCubit(
@@ -116,12 +120,14 @@ void main() {
             people: [],
             query: '',
             errorMessage: '',
+            page: 0,
           ),
           const PeopleSearchState(
             status: PeopleSearchStatus.failure,
             people: [],
             query: '',
             errorMessage: 'Unknown Error',
+            page: 1,
           ),
         ],
       );
@@ -147,6 +153,7 @@ void main() {
           people: [],
           query: 'mike',
           errorMessage: '',
+          page: 0,
         ),
         expect: () => [
           const PeopleSearchState(
@@ -154,12 +161,14 @@ void main() {
             people: [],
             query: 'mike',
             errorMessage: '',
+            page: 0,
           ),
           const PeopleSearchState(
             status: PeopleSearchStatus.success,
             people: [],
             query: 'mike',
             errorMessage: '',
+            page: 0,
           ),
         ],
       );
@@ -180,6 +189,7 @@ void main() {
           people: [],
           query: 'mike',
           errorMessage: '',
+          page: 0,
         ),
         expect: () => [
           const PeopleSearchState(
@@ -187,12 +197,14 @@ void main() {
             people: [],
             query: 'mike',
             errorMessage: '',
+            page: 0,
           ),
           const PeopleSearchState(
             status: PeopleSearchStatus.failure,
             people: [],
             query: 'mike',
             errorMessage: 'error',
+            page: 0,
           ),
         ],
       );
@@ -213,6 +225,7 @@ void main() {
           people: [],
           query: 'mike',
           errorMessage: '',
+          page: 0,
         ),
         expect: () => [
           const PeopleSearchState(
@@ -220,12 +233,14 @@ void main() {
             people: [],
             query: 'mike',
             errorMessage: '',
+            page: 0,
           ),
           const PeopleSearchState(
             status: PeopleSearchStatus.failure,
             people: [],
             query: 'mike',
             errorMessage: 'Unknown Error',
+            page: 0,
           ),
         ],
       );

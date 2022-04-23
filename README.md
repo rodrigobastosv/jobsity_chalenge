@@ -2,9 +2,18 @@
 [![codecov](https://codecov.io/gh/rodrigobastosv/jobsity_chalenge/branch/main/graph/badge.svg?token=0SD58R3iwE)](https://codecov.io/gh/rodrigobastosv/jobsity_chalenge)
 
 # Jobsity Chalenge
+The APK of the app was generated and can be downloaded in https://drive.google.com/file/d/1lm6d3ROtwsKbTlvFEu3eMcKXQ2hHh5YF/view?usp=sharing
 
-# Running the project
+# Run the project
 To run the project, just run `flutter run` on the root folder.
+
+# Tests
+The code is pretty much all covered with tests, with a coverage higher than 95%. It was done Unit, Cubit and Widgets Tests.
+
+To run the tests of the project, just run `flutter test` on the root folder
+
+# Build the app
+To build the app, just run `flutter build apk --release` on the root folder
 
 # Features
 - Clean Arquictecure and clear separation of concerns
@@ -14,8 +23,11 @@ To run the project, just run `flutter run` on the root folder.
 - Search for Shows
 - Shows Details (with episodes)
 - People Search
+- Infinite ListView with pagination on the shows and people searchs
 - App Icon
 - App SplashScreen
+- Animations with Lottie
+- CI, tests and code coverage
 
 # Infomration
 - The app is using flutter_bloc for state management, more precisely the state management is done using cubit's
@@ -29,6 +41,3 @@ To run the project, just run `flutter run` on the root folder.
 
 # Lint
 The app is using flutter_lints as the rules to lint the project
-
-# Tests
-The code is pretty much all covered with tests, with a coverage higher than 95%. It was done Unit, Cubit and Widgets Tests.

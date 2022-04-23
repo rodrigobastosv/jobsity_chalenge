@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:very_good_infinite_list/very_good_infinite_list.dart';
 
 import '../../../core/core.dart';
 import '../people_search.dart';
@@ -38,29 +39,44 @@ class PeopleSearchPage extends StatelessWidget {
             const SizedBox(width: 8),
           ],
         ),
-        body: state.status == PeopleSearchStatus.loading
-            ? const Center(
+        body: InfiniteList(
+          itemCount: state.people.length,
+          isLoading: context.watch<PeopleSearchCubit>().state.status ==
+              PeopleSearchStatus.loading,
+          onFetchData: context.read<PeopleSearchCubit>().fetchPeople,
+          emptyBuilder: (_) => const Center(
+            child: Text(
+              'No person found!',
+            ),
+          ),
+          loadingBuilder: (_) => const Padding(
+            padding: EdgeInsets.all(8.0),
+            child: Center(
+              child: SizedBox(
+                width: 30,
+                height: 30,
                 child: CircularProgressIndicator(),
-              )
-            : ListView.builder(
-                itemBuilder: (_, i) => ListTile(
-                  onTap: () => Navigator.of(context).pushNamed(
-                    personDetailsPage,
-                    arguments: state.people[i],
-                  ),
-                  leading: state.people[i].mediumImage != null
-                      ? Hero(
-                          tag: 'person_${state.people[i]}',
-                          child: CircleAvatar(
-                            backgroundImage:
-                                NetworkImage(state.people[i].mediumImage!),
-                          ),
-                        )
-                      : const Icon(Icons.person),
-                  title: Text(state.people[i].name!),
-                ),
-                itemCount: state.people.length,
               ),
+            ),
+          ),
+          itemBuilder: (_, i) => ListTile(
+            onTap: () => Navigator.of(context).pushNamed(
+              personDetailsPage,
+              arguments: state.people[i],
+            ),
+            leading: state.people[i].mediumImage != null
+                ? Hero(
+                    tag: 'person_${state.people[i]}',
+                    child: CircleAvatar(
+                      backgroundImage:
+                          NetworkImage(state.people[i].mediumImage!),
+                    ),
+                  )
+                : const Icon(Icons.person),
+            title: Text(state.people[i].name!),
+          ),
+          separatorBuilder: (_) => const SizedBox(height: 8),
+        ),
       ),
     );
   }

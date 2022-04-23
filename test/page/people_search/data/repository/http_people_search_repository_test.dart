@@ -23,7 +23,12 @@ void main() {
       test(
         'should return correct list when success',
         () async {
-          when(() => dioMock.get(any())).thenAnswer(
+          when(
+            () => dioMock.get(
+              any(),
+              queryParameters: any(named: 'queryParameters'),
+            ),
+          ).thenAnswer(
             (_) async => Response(
               statusCode: httpOk,
               data: [
@@ -35,7 +40,7 @@ void main() {
             ),
           );
 
-          final people = await repository.fetchPeople();
+          final people = await repository.fetchPeopleByPage(0);
           expect(people, isNotEmpty);
         },
       );
@@ -43,7 +48,12 @@ void main() {
       test(
         'should throw FetchPeopleSearchException when status is not ok',
         () async {
-          when(() => dioMock.get(any())).thenAnswer(
+          when(
+            () => dioMock.get(
+              any(),
+              queryParameters: any(named: 'queryParameters'),
+            ),
+          ).thenAnswer(
             (_) async => Response(
               statusCode: 400,
               data: [],
@@ -52,7 +62,7 @@ void main() {
           );
 
           try {
-            await repository.fetchPeople();
+            await repository.fetchPeopleByPage(0);
           } on Exception catch (e) {
             expect(e, isA<FetchPeopleSearchException>());
           }
@@ -62,12 +72,17 @@ void main() {
       test(
         'should throw FetchPeopleSearchException when exception',
         () async {
-          when(() => dioMock.get(any())).thenThrow(
+          when(
+            () => dioMock.get(
+              any(),
+              queryParameters: any(named: 'queryParameters'),
+            ),
+          ).thenThrow(
             FetchPeopleSearchException('error'),
           );
 
           try {
-            await repository.fetchPeople();
+            await repository.fetchPeopleByPage(0);
           } on Exception catch (e) {
             expect(e, isA<FetchPeopleSearchException>());
           }
@@ -77,12 +92,19 @@ void main() {
       test(
         'should throw UnknownException when throw',
         () async {
-          when(() => dioMock.get(any())).thenThrow(
+          when(
+            () => dioMock.get(
+              any(),
+              queryParameters: any(
+                named: 'queryParameters',
+              ),
+            ),
+          ).thenThrow(
             Exception(),
           );
 
           try {
-            await repository.fetchPeople();
+            await repository.fetchPeopleByPage(0);
           } on Exception catch (e) {
             expect(e, isA<UnknownException>());
           }

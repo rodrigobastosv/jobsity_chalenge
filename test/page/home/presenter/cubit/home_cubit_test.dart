@@ -49,7 +49,7 @@ void main() {
       blocTest<HomeCubit, HomeState>(
         'emits loading and success when fetchFavoriteShows is success',
         build: () {
-          when(() => repositoryMock.fetchShows(1)).thenAnswer(
+          when(() => repositoryMock.fetchShows(0)).thenAnswer(
             (_) async => [
               showFake,
               showFake,
@@ -59,13 +59,14 @@ void main() {
             repository: repositoryMock,
           );
         },
-        act: (cubit) => cubit.fetchShowsByPage(1),
+        act: (cubit) => cubit.fetchShowsByPage(),
         expect: () => [
           const HomeState(
             status: HomeStatus.loading,
             shows: [],
             query: '',
             errorMessage: '',
+            page: 0,
           ),
           const HomeState(
             status: HomeStatus.success,
@@ -75,6 +76,7 @@ void main() {
             ],
             query: '',
             errorMessage: '',
+            page: 1,
           ),
         ],
       );
@@ -82,26 +84,28 @@ void main() {
       blocTest<HomeCubit, HomeState>(
         'emits loading, failure with errorMessage when fetchShowsByPage throws FetchShowException',
         build: () {
-          when(() => repositoryMock.fetchShows(1)).thenThrow(
+          when(() => repositoryMock.fetchShows(0)).thenThrow(
             FetchShowException('error'),
           );
           return HomeCubit(
             repository: repositoryMock,
           );
         },
-        act: (cubit) => cubit.fetchShowsByPage(1),
+        act: (cubit) => cubit.fetchShowsByPage(),
         expect: () => [
           const HomeState(
             status: HomeStatus.loading,
             shows: [],
             query: '',
             errorMessage: '',
+            page: 0,
           ),
           const HomeState(
             status: HomeStatus.failure,
             shows: [],
             query: '',
             errorMessage: 'error',
+            page: 0,
           ),
         ],
       );
@@ -109,26 +113,28 @@ void main() {
       blocTest<HomeCubit, HomeState>(
         'emits loading, failure with errorMessage when fetchShowsByPage throws UnknownException',
         build: () {
-          when(() => repositoryMock.fetchShows(1)).thenThrow(
+          when(() => repositoryMock.fetchShows(0)).thenThrow(
             UnknownException(),
           );
           return HomeCubit(
             repository: repositoryMock,
           );
         },
-        act: (cubit) => cubit.fetchShowsByPage(1),
+        act: (cubit) => cubit.fetchShowsByPage(),
         expect: () => [
           const HomeState(
             status: HomeStatus.loading,
             shows: [],
             query: '',
             errorMessage: '',
+            page: 0,
           ),
           const HomeState(
             status: HomeStatus.failure,
             shows: [],
             query: '',
             errorMessage: 'Unknown Error',
+            page: 0,
           ),
         ],
       );
@@ -154,10 +160,18 @@ void main() {
         act: (cubit) => cubit.fetchShowsByQuery(),
         expect: () => [
           const HomeState(
+            status: HomeStatus.initial,
+            shows: [],
+            query: '',
+            errorMessage: '',
+            page: 0,
+          ),
+          const HomeState(
             status: HomeStatus.loading,
             shows: [],
             query: '',
             errorMessage: '',
+            page: 0,
           ),
           const HomeState(
             status: HomeStatus.success,
@@ -167,6 +181,7 @@ void main() {
             ],
             query: '',
             errorMessage: '',
+            page: 1,
           ),
         ],
       );
@@ -190,6 +205,7 @@ void main() {
           shows: [],
           query: 'mike',
           errorMessage: '',
+          page: 0,
         ),
         expect: () => [
           const HomeState(
@@ -200,6 +216,7 @@ void main() {
             ],
             query: 'mike',
             errorMessage: '',
+            page: 0,
           ),
         ],
       );
@@ -220,6 +237,7 @@ void main() {
           shows: [],
           query: 'mike',
           errorMessage: '',
+          page: 0,
         ),
         expect: () => [
           const HomeState(
@@ -227,6 +245,7 @@ void main() {
             shows: [],
             query: 'mike',
             errorMessage: 'error',
+            page: 0,
           ),
         ],
       );
@@ -247,6 +266,7 @@ void main() {
           shows: [],
           query: 'mike',
           errorMessage: '',
+          page: 0,
         ),
         expect: () => [
           const HomeState(
@@ -254,6 +274,7 @@ void main() {
             shows: [],
             query: 'mike',
             errorMessage: 'Unknown Error',
+            page: 0,
           ),
         ],
       );
