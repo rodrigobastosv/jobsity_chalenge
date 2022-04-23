@@ -23,6 +23,11 @@ jobs:
     - run: flutter format --set-exit-if-changed .
     - run: flutter analyze .
     - run: flutter test --no-pub --no-test-assets --coverage --test-randomize-ordering-seed random
+    - uses: codecov/codecov-action@v1.0.7
+        if: matrix.os == 'ubuntu-latest'
+        with:
+          token: ${{secrets.CODECOV_TOKEN}}
+          file: ./coverage/lcov.info
     - run: flutter build apk
     
     - uses: actions/upload-artifact@v1
