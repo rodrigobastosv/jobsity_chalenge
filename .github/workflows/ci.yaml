@@ -1,4 +1,4 @@
-name: Jobsity Chalenge CI
+name: build
 
 on:
   push:
