@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
 
-import 'package:jobsity_chalenge/core/data/model/show_model.dart';
 import '../../../../core/core.dart';
+import '../../../../core/data/model/show_model.dart';
 import '../../data/data.dart';
 import 'show_details_state.dart';
 

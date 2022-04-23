@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
+
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:mockingjay/mockingjay.dart';
+
 import 'package:jobsity_chalenge/page/home/home.dart';
 import 'package:jobsity_chalenge/page/home/presenter/cubit/home_state.dart';
 import 'package:jobsity_chalenge/page/home/presenter/widget/widget.dart';
 import 'package:jobsity_chalenge/ui/ui.dart';
-import 'package:mockingjay/mockingjay.dart';
-
 import '../../../data.dart';
 import '../../../mock.dart';
 import '../../../utils.dart';

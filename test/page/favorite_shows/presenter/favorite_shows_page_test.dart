@@ -1,12 +1,13 @@
-import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:flutter/material.dart';
+
+import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:mockingjay/mockingjay.dart';
+
 import 'package:jobsity_chalenge/core/core.dart';
 import 'package:jobsity_chalenge/page/favorite_shows/presenter/cubit/favorite_shows_state.dart';
 import 'package:jobsity_chalenge/page/favorite_shows/presenter/presenter.dart';
-import 'package:mockingjay/mockingjay.dart';
-
 import '../../../data.dart';
 import '../../../mock.dart';
 import '../../../utils.dart';
@@ -29,7 +30,7 @@ void main() {
         tester,
         widget: BlocProvider<FavoriteShowsCubit>.value(
           value: cubitMock,
-          child: const FavoriteShowsPage(),
+          child: FavoriteShowsPage(),
         ),
       );
 
@@ -50,7 +51,7 @@ void main() {
         tester,
         widget: BlocProvider<FavoriteShowsCubit>.value(
           value: cubitMock,
-          child: const FavoriteShowsPage(),
+          child: FavoriteShowsPage(),
         ),
       );
 
@@ -85,7 +86,7 @@ void main() {
         mockNavigator,
         widget: BlocProvider<FavoriteShowsCubit>.value(
           value: cubitMock,
-          child: const FavoriteShowsPage(),
+          child: FavoriteShowsPage(),
         ),
       );
 

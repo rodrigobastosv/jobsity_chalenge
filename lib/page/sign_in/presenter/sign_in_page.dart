@@ -4,10 +4,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:pinput/pinput.dart';
 
-import 'package:jobsity_chalenge/core/core.dart';
-import 'package:jobsity_chalenge/page/sign_in/presenter/presenter.dart';
+import '../../../core/core.dart';
 import '../../../ui/ui.dart';
 import 'cubit/sign_in_state.dart';
+import 'presenter.dart';
 
 class SignInPage extends StatefulWidget {
   const SignInPage({
@@ -77,7 +77,7 @@ class _SignInPageState extends State<SignInPage> {
             else
               state.canCheckBiometrics ?? false
                   ? ElevatedButton.icon(
-                    key: const ValueKey('fingerprint_button_key'),
+                      key: const ValueKey('fingerprint_button_key'),
                       onPressed: () =>
                           context.read<SignInCubit>().authWithFingeprint(),
                       icon: const Icon(Icons.fingerprint),

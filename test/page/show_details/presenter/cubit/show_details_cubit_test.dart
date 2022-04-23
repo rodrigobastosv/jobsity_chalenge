@@ -1,10 +1,10 @@
 import 'package:bloc_test/bloc_test.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:mocktail/mocktail.dart';
+
 import 'package:jobsity_chalenge/core/core.dart';
 import 'package:jobsity_chalenge/page/show_details/presenter/cubit/show_details_state.dart';
 import 'package:jobsity_chalenge/page/show_details/show_details.dart';
-import 'package:mocktail/mocktail.dart';
-
 import '../../../../data.dart';
 import '../../../../mock.dart';
 

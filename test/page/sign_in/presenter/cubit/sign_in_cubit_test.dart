@@ -1,9 +1,9 @@
 import 'package:bloc_test/bloc_test.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:jobsity_chalenge/page/sign_in/presenter/cubit/sign_in_state.dart';
-import 'package:jobsity_chalenge/page/sign_in/presenter/presenter.dart';
 import 'package:mocktail/mocktail.dart';
 
+import 'package:jobsity_chalenge/page/sign_in/presenter/cubit/sign_in_state.dart';
+import 'package:jobsity_chalenge/page/sign_in/presenter/presenter.dart';
 import '../../../../mock.dart';
 
 void main() {
@@ -94,8 +94,11 @@ void main() {
       blocTest<SignInCubit, SignInState>(
         'emits success when authWithFingeprint is success',
         build: () {
-          when(() => localAuthenticationMock.authenticate(
-              localizedReason: any(named: 'localizedReason'))).thenAnswer(
+          when(
+            () => localAuthenticationMock.authenticate(
+              localizedReason: any(named: 'localizedReason'),
+            ),
+          ).thenAnswer(
             (_) async => true,
           );
           return SignInCubit(
@@ -117,8 +120,11 @@ void main() {
       blocTest<SignInCubit, SignInState>(
         'emits failure when authWithFingeprint is not success',
         build: () {
-          when(() => localAuthenticationMock.authenticate(
-              localizedReason: any(named: 'localizedReason'))).thenAnswer(
+          when(
+            () => localAuthenticationMock.authenticate(
+              localizedReason: any(named: 'localizedReason'),
+            ),
+          ).thenAnswer(
             (_) async => false,
           );
           return SignInCubit(

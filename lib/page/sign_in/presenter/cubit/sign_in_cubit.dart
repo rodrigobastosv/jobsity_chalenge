@@ -2,7 +2,7 @@ import 'package:bloc/bloc.dart';
 import 'package:hive/hive.dart';
 import 'package:local_auth/local_auth.dart';
 
-import 'package:jobsity_chalenge/page/sign_in/sign_in.dart';
+import '../../sign_in.dart';
 import 'sign_in_state.dart';
 
 class SignInCubit extends Cubit<SignInState> {

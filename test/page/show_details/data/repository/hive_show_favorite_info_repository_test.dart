@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:jobsity_chalenge/page/show_details/data/data.dart';
 import 'package:mocktail/mocktail.dart';
 
+import 'package:jobsity_chalenge/page/show_details/data/data.dart';
 import '../../../../data.dart';
 import '../../../../mock.dart';
 
@@ -57,7 +57,8 @@ void main() {
     () {
       when(() => userPinBoxMock.get(any())).thenReturn(1);
       when(() => favoriteMoviesBoxMock.get(1)).thenReturn({});
-      when(() => favoriteMoviesBoxMock.put(any(), any())).thenAnswer((_) async => {});
+      when(() => favoriteMoviesBoxMock.put(any(), any()))
+          .thenAnswer((_) async => {});
 
       repository.favoriteShow(showFake);
     },
@@ -68,7 +69,8 @@ void main() {
     () {
       when(() => userPinBoxMock.get(any())).thenReturn(1);
       when(() => favoriteMoviesBoxMock.get(1)).thenReturn({});
-      when(() => favoriteMoviesBoxMock.put(any(), any())).thenAnswer((_) async => {});
+      when(() => favoriteMoviesBoxMock.put(any(), any()))
+          .thenAnswer((_) async => {});
 
       repository.unfavoriteShow(showFake);
     },

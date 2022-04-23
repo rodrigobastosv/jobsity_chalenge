@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 
-import 'package:jobsity_chalenge/core/data/model/show_episode_model.dart';
 import '../../../../core/core.dart';
+import '../../../../core/data/model/show_episode_model.dart';
 import '../data.dart';
 
 class HttpShowDetailsRepository implements ShowDetailsRepository {

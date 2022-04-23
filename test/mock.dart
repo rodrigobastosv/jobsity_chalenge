@@ -1,6 +1,9 @@
 import 'package:bloc_test/bloc_test.dart';
 import 'package:dio/dio.dart';
 import 'package:hive/hive.dart';
+import 'package:local_auth/local_auth.dart';
+import 'package:mockingjay/mockingjay.dart';
+
 import 'package:jobsity_chalenge/core/data/model/model.dart';
 import 'package:jobsity_chalenge/page/favorite_shows/favorite_shows.dart';
 import 'package:jobsity_chalenge/page/favorite_shows/presenter/cubit/favorite_shows_state.dart';
@@ -19,8 +22,6 @@ import 'package:jobsity_chalenge/page/sign_in/sign_in.dart';
 import 'package:jobsity_chalenge/page/sign_up/data/data.dart';
 import 'package:jobsity_chalenge/page/sign_up/presenter/cubit/sign_up_state.dart';
 import 'package:jobsity_chalenge/page/sign_up/presenter/presenter.dart';
-import 'package:local_auth/local_auth.dart';
-import 'package:mockingjay/mockingjay.dart';
 
 // Cubit
 class HomeCubitMock extends MockCubit<HomeState> implements HomeCubit {}

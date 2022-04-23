@@ -1,9 +1,9 @@
 import 'package:dio/dio.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:jobsity_chalenge/core/core.dart';
-import 'package:jobsity_chalenge/page/people_search/data/data.dart';
 import 'package:mocktail/mocktail.dart';
 
+import 'package:jobsity_chalenge/core/core.dart';
+import 'package:jobsity_chalenge/page/people_search/data/data.dart';
 import '../../../../mock.dart';
 
 void main() {
@@ -97,8 +97,12 @@ void main() {
       test(
         'should return correct list when success',
         () async {
-          when(() => dioMock.get(any(),
-              queryParameters: any(named: 'queryParameters'))).thenAnswer(
+          when(
+            () => dioMock.get(
+              any(),
+              queryParameters: any(named: 'queryParameters'),
+            ),
+          ).thenAnswer(
             (_) async => Response(
               statusCode: httpOk,
               data: [
@@ -120,8 +124,12 @@ void main() {
       test(
         'should throw FetchPeopleSearchException when status is not ok',
         () async {
-          when(() => dioMock.get(any(),
-              queryParameters: any(named: 'queryParameters'))).thenAnswer(
+          when(
+            () => dioMock.get(
+              any(),
+              queryParameters: any(named: 'queryParameters'),
+            ),
+          ).thenAnswer(
             (_) async => Response(
               statusCode: 400,
               data: [],
@@ -140,8 +148,12 @@ void main() {
       test(
         'should throw FetchPeopleSearchException when exception',
         () async {
-          when(() => dioMock.get(any(),
-              queryParameters: any(named: 'queryParameters'))).thenThrow(
+          when(
+            () => dioMock.get(
+              any(),
+              queryParameters: any(named: 'queryParameters'),
+            ),
+          ).thenThrow(
             FetchPeopleSearchException('error'),
           );
 
@@ -156,8 +168,12 @@ void main() {
       test(
         'should throw UnknownException when throw',
         () async {
-          when(() => dioMock.get(any(),
-              queryParameters: any(named: 'queryParameters'))).thenThrow(
+          when(
+            () => dioMock.get(
+              any(),
+              queryParameters: any(named: 'queryParameters'),
+            ),
+          ).thenThrow(
             Exception(),
           );
 

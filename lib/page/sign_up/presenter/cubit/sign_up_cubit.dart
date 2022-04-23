@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
 
-import 'package:jobsity_chalenge/page/sign_up/presenter/cubit/sign_up_state.dart';
 import '../../data/data.dart';
+import 'sign_up_state.dart';
 
 class SignUpCubit extends Cubit<SignUpState> {
   SignUpCubit({

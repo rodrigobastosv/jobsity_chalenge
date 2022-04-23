@@ -34,5 +34,5 @@ const episodeFake = ShowEpisodeModel(
   summary: 'summary',
   number: 1,
   season: 1,
-  originalImage: 'image,'
+  originalImage: 'image,',
 );

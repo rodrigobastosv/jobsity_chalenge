@@ -1,4 +1,4 @@
-import 'package:jobsity_chalenge/page/people_search/data/data.dart';
+import '../data.dart';
 
 abstract class PeopleSearchRepository {
   Future<List<PersonModel>> fetchPeople();

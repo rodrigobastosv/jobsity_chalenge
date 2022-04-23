@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+
 import 'package:flutter_test/flutter_test.dart';
-import 'package:jobsity_chalenge/core/core.dart';
-import 'package:jobsity_chalenge/page/home/presenter/widget/widget.dart';
 import 'package:mockingjay/mockingjay.dart';
 
+import 'package:jobsity_chalenge/core/core.dart';
+import 'package:jobsity_chalenge/page/home/presenter/widget/widget.dart';
 import '../../../../data.dart';
 import '../../../../utils.dart';
 

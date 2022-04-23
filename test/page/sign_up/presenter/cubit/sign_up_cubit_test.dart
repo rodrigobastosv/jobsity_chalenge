@@ -1,9 +1,9 @@
 import 'package:bloc_test/bloc_test.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:jobsity_chalenge/page/sign_up/presenter/cubit/sign_up_state.dart';
-import 'package:jobsity_chalenge/page/sign_up/sign_up.dart';
 import 'package:mocktail/mocktail.dart';
 
+import 'package:jobsity_chalenge/page/sign_up/presenter/cubit/sign_up_state.dart';
+import 'package:jobsity_chalenge/page/sign_up/sign_up.dart';
 import '../../../../mock.dart';
 
 void main() {

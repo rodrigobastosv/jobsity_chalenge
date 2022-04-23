@@ -1,7 +1,7 @@
 import 'package:hive/hive.dart';
 
-import 'package:jobsity_chalenge/core/core.dart';
-import 'package:jobsity_chalenge/core/data/model/show_model.dart';
+import '../../../../core/core.dart';
+import '../../../../core/data/model/show_model.dart';
 import '../data.dart';
 
 class HiveFavoriteShowsRepository implements FavoriteShowsRepository {
@@ -24,8 +24,10 @@ class HiveFavoriteShowsRepository implements FavoriteShowsRepository {
       }
 
       final listShows = shows.values.toList();
-      final list = List.generate(listShows.length,
-          (i) => ShowModel.fromJson(Map<String, dynamic>.from(listShows[i])));
+      final list = List.generate(
+        listShows.length,
+        (i) => ShowModel.fromJson(Map<String, dynamic>.from(listShows[i])),
+      );
       list.sort((s1, s2) => s1.name!.compareTo(s2.name!));
       return list;
     } on Exception {

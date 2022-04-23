@@ -1,12 +1,13 @@
-import 'package:bloc_test/bloc_test.dart';
 import 'package:flutter/material.dart';
+
+import 'package:bloc_test/bloc_test.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:mockingjay/mockingjay.dart';
+
 import 'package:jobsity_chalenge/core/core.dart';
 import 'package:jobsity_chalenge/page/sign_in/presenter/cubit/sign_in_state.dart';
 import 'package:jobsity_chalenge/page/sign_in/presenter/presenter.dart';
-import 'package:mockingjay/mockingjay.dart';
-
 import '../../../mock.dart';
 import '../../../utils.dart';
 
@@ -124,6 +125,41 @@ void main() {
           homePage,
         ),
       ).called(1);
+    },
+  );
+
+  testWidgets(
+    'should show error when failure',
+    (tester) async {
+      await tester.runAsync(
+        () async {
+          whenListen(
+            signInCubitMock,
+            Stream.fromIterable(
+              [
+                SignInState.initial().copyWith(
+                  status: SignInStatus.failure,
+                  canCheckBiometrics: true,
+                ),
+              ],
+            ),
+            initialState: SignInState.initial().copyWith(
+              status: SignInStatus.initial,
+              canCheckBiometrics: true,
+            ),
+          );
+
+          await pumpWidgetWithApp(
+            tester,
+            widget: BlocProvider<SignInCubit>.value(
+              value: signInCubitMock,
+              child: const SignInPage(),
+            ),
+          );
+          await tester.pump();
+          expect(find.text('Incorrect PIN'), findsOneWidget);
+        },
+      );
     },
   );
 

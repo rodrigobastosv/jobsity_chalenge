@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'package:jobsity_chalenge/core/core.dart';
-import 'package:jobsity_chalenge/page/show_details/show_details.dart';
+import '../../../core/core.dart';
+import '../show_details.dart';
 import 'cubit/show_details_state.dart';
 
 class ShowDetailsPage extends StatelessWidget {
@@ -73,7 +73,8 @@ class ShowDetailsPage extends StatelessWidget {
                         ),
                       ),
                       title: Text(
-                          '${episode.name!} (Season ${episode.season} Episode ${episode.number})'),
+                        '${episode.name!} (Season ${episode.season} Episode ${episode.number})',
+                      ),
                     );
                   },
                   separatorBuilder: (_, i) => const Divider(),

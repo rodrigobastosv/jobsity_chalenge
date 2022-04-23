@@ -1,6 +1,6 @@
 import 'package:hive/hive.dart';
 
-import 'package:jobsity_chalenge/core/data/model/show_model.dart';
+import '../../../../core/data/model/show_model.dart';
 import 'repository.dart';
 
 class HiveShowFavoriteInfoRepository implements ShowFavoriteInfoRepository {

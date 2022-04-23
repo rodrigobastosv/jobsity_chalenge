@@ -3,16 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'package:jobsity_chalenge/page/favorite_shows/favorite_shows.dart';
 import '../../../core/core.dart';
+import '../favorite_shows.dart';
 import 'cubit/favorite_shows_state.dart';
 import 'presenter.dart';
 
 class FavoriteShowsPage extends StatelessWidget {
-  const FavoriteShowsPage({
-    Key? key,
-  }) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<FavoriteShowsCubit, FavoriteShowsState>(

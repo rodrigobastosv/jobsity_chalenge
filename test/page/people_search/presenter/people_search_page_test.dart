@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
+
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:jobsity_chalenge/core/core.dart';
-import 'package:jobsity_chalenge/page/people_search/presenter/cubit/people_search_state.dart';
-import 'package:jobsity_chalenge/page/people_search/presenter/presenter.dart';
 import 'package:mockingjay/mockingjay.dart';
 import 'package:network_image_mock/network_image_mock.dart';
 
+import 'package:jobsity_chalenge/core/core.dart';
+import 'package:jobsity_chalenge/page/people_search/presenter/cubit/people_search_state.dart';
+import 'package:jobsity_chalenge/page/people_search/presenter/presenter.dart';
 import '../../../data.dart';
 import '../../../mock.dart';
 import '../../../utils.dart';

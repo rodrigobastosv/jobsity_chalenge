@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'package:jobsity_chalenge/page/people_search/people_search.dart';
 import '../../../core/core.dart';
+import '../people_search.dart';
 import 'cubit/people_search_state.dart';
 
 class PeopleSearchPage extends StatelessWidget {

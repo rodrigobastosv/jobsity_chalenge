@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
+
 import 'package:jobsity_chalenge/core/data/model/show_episode_model.dart';
 import 'package:jobsity_chalenge/page/episode_details/episode_details.dart';
-
 import '../../utils.dart';
 
 void main() {

@@ -1,6 +1,6 @@
 import 'package:equatable/equatable.dart';
 
-import 'package:jobsity_chalenge/page/people_search/people_search.dart';
+import '../../people_search.dart';
 
 enum PeopleSearchStatus {
   initial,

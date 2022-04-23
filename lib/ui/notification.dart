@@ -8,16 +8,7 @@ Future<void> showSuccessNotification(
   required String message,
 }) async {
   Flushbar(
-    titleText: title != null
-        ? Text(
-            title,
-            style: const TextStyle(
-              color: Colors.white,
-              fontSize: 16.0,
-              fontWeight: FontWeight.w500,
-            ),
-          )
-        : null,
+    titleText: null,
     messageText: Text(
       message,
       style: const TextStyle(

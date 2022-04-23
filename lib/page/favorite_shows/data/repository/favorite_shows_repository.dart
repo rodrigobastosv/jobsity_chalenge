@@ -1,4 +1,4 @@
-import 'package:jobsity_chalenge/core/data/model/show_model.dart';
+import '../../../../core/data/model/show_model.dart';
 
 abstract class FavoriteShowsRepository {
   Future<List<ShowModel>> fetchFavoriteShows();

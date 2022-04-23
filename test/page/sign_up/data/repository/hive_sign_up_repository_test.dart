@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:jobsity_chalenge/page/sign_up/data/data.dart';
 import 'package:mocktail/mocktail.dart';
 
+import 'package:jobsity_chalenge/page/sign_up/data/data.dart';
 import '../../../../mock.dart';
 
 void main() {

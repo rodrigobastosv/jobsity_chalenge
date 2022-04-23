@@ -1,7 +1,7 @@
 import 'package:equatable/equatable.dart';
 
-import 'package:jobsity_chalenge/core/data/model/show_episode_model.dart';
 import '../../../../core/data/model/model.dart';
+import '../../../../core/data/model/show_episode_model.dart';
 
 enum ShowDetailsStatus {
   initial,

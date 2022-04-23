@@ -1,9 +1,9 @@
 import 'package:dio/dio.dart';
 
-import 'package:jobsity_chalenge/core/core.dart';
-import 'package:jobsity_chalenge/page/home/data/repository/home_repository.dart';
+import '../../../../core/core.dart';
 import '../../../../core/data/model/model.dart';
 import '../exception/exception.dart';
+import 'home_repository.dart';
 
 class HttpHomeRepository implements HomeRepository {
   HttpHomeRepository(this.client);

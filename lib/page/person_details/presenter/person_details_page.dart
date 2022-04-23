@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:lottie/lottie.dart';
 
-import 'package:jobsity_chalenge/page/person_details/person_details.dart';
 import '../../../core/core.dart';
+import '../person_details.dart';
 import 'cubit/person_details_state.dart';
 
 class PersonDetailsPage extends StatelessWidget {
