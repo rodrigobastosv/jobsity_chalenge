@@ -23,6 +23,7 @@ To build the app, just run `flutter build apk --release` on the root folder
 - Search for Shows
 - Shows Details (with episodes)
 - People Search
+- Caching of images
 - Infinite ListView with pagination on the shows and people searchs
 - App Icon
 - App SplashScreen
