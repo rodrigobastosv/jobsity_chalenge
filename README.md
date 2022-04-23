@@ -1,4 +1,5 @@
 [![Jobsity Chalenge CI](https://github.com/rodrigobastosv/jobsity_chalenge/actions/workflows/ci.yaml/badge.svg)](https://github.com/rodrigobastosv/jobsity_chalenge/actions/workflows/ci.yaml)
+[![codecov](https://codecov.io/gh/rodrigobastosv/jobsity_chalenge/branch/main/graph/badge.svg?token=0SD58R3iwE)](https://codecov.io/gh/rodrigobastosv/jobsity_chalenge)
 
 # Jobsity Chalenge
 
