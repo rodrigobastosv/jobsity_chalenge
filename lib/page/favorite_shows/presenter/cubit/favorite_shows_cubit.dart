@@ -25,7 +25,9 @@ class FavoriteShowsCubit extends Cubit<FavoriteShowsState> {
     } on FavoriteShowsException catch (e) {
       emit(
         state.copyWith(
-            status: FavoriteShowsStatus.failure, errorMessage: e.errorMessage),
+          status: FavoriteShowsStatus.failure,
+          errorMessage: e.errorMessage,
+        ),
       );
     } on UnknownException catch (e) {
       emit(

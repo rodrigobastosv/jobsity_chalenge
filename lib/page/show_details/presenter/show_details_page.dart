@@ -39,6 +39,7 @@ class ShowDetailsPage extends StatelessWidget {
                       state.isShowFavorited!
                           ? Icons.favorite
                           : Icons.favorite_border,
+                      key: const ValueKey('favorite_icon_key'),
                       color: Theme.of(context).colorScheme.primary,
                       size: 32,
                     ),

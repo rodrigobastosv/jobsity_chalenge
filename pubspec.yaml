@@ -35,6 +35,7 @@ dev_dependencies:
   mocktail: ^0.2.0
   mockingjay: ^0.2.0
   import_sorter: ^4.5.1
+  network_image_mock: ^2.0.1
 
 scripts: derry.yaml
 
